@@ -1,0 +1,13 @@
+Patient ID: 0445
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
+
+

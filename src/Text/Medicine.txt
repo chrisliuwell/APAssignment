@@ -1,0 +1,6 @@
+Medicine ID: 24435
+Medicine Name: Acetaminophen
+Dousage: 2 
+Instruction: Inject Medicine, then add in the soution
+
+

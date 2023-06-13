@@ -1,0 +1,14 @@
+Procedure ID: 0488
+Procedure Name: Breast biopsy
+Procedure Type: Fine-needle aspiration biopsy
+Date: 03/05/2023
+Time: 19:00
+Amount: 3
+Frequency: 3
+Duration: 2 hours
+Cost: RM15000
+Description: Surgery included
+
+
+
+
