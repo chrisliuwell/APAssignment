@@ -6,8 +6,7 @@ package assignment1;
 
 import javax.swing.JFrame;
  
-//christopher trying to push
-
+// Christopher Trying to do this
 /**
  *
  * @author chrisliuwell
