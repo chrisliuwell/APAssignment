@@ -7,7 +7,7 @@ package assignment1;
 import javax.swing.JFrame;
 
 /**
- *
+// *Christopher Liuwell Assign This
  * @author chrisliuwell
  */
 public class Delete extends javax.swing.JFrame {
