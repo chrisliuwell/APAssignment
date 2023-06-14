@@ -183,9 +183,9 @@ public class ViewForm extends javax.swing.JFrame {
 
     if (patientExist) {
         System.out.println("Patient ID found");
-        jTextArea1.setText("Patient ID found.");
         String patientDetails = getPatientDetails(patientID);
-        jTextArea1.setText(patientDetails);
+        jTextArea1.setText("Patient ID found.\n" + patientDetails);
+        
     } else {
         System.out.println("Patient ID not found!");
         jTextArea1.setText("No details found for the given patient ID.");
@@ -208,24 +208,17 @@ public class ViewForm extends javax.swing.JFrame {
     }
 
     private String getPatientDetails(String patientID) {
-        StringBuilder details = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            String line;
-            boolean foundPatient = false;
-            while ((line = br.readLine()) != null) {
-                if (line.equals(patientID)) {
-                    foundPatient = true;
-                } else if (foundPatient) {
-                    details.append(line).append("\n");
-                    if (details.toString().split("\n").length >= 4) {
-                    break;
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    StringBuilder details = new StringBuilder();
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            details.append(line).append("\n");
         }
-        return details.toString();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return details.toString();
+
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**
