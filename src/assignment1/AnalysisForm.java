@@ -20,7 +20,7 @@ public class AnalysisForm extends javax.swing.JFrame {
     
     
     /**
-     * Creates new form TreatmentForm
+     * Creates new form TreatmentForm Commit
      */
     public AnalysisForm() {
         initComponents();
