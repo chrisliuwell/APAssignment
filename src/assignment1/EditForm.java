@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author ooiju
+ * @author pj n jq
  */
 public class EditForm extends javax.swing.JFrame {
 
