@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFrame;
 
+
 /**
  *
  * @author ooiju
@@ -67,6 +68,11 @@ public class ViewForm extends javax.swing.JFrame {
         jLabel2.setText("Enter patient ID:");
 
         Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
 
         ReturntoMainMenu.setText("Return to Main Menu");
         ReturntoMainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -158,51 +164,9 @@ public class ViewForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-        
         String patientID = jTextField2.getText();
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            writer.write(patientID);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            String storedPatientID = reader.readLine();
-            jTextArea1.setText("Stored Patient ID: " + storedPatientID);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-        String line;
-        StringBuilder details = new StringBuilder();
-        boolean found = false;
-
-        while ((line = reader.readLine()) != null) {
-            if (line.equals(patientID)) {
-                found = true;
-                details.append(line).append("\n");
-                // Read and append additional details from the file if needed
-                // For example:
-                // details.append(reader.readLine()).append("\n");
-                // details.append(reader.readLine()).append("\n");
-            }
-        }
-
-        if (found) {
-            jTextArea1.setText(details.toString());
-        } else {
-            jTextArea1.setText("No details found for the given patient ID.");
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-        jTextArea1.setText("Error occurred while reading the file.");
-    }
-
     }//GEN-LAST:event_jTextField2ActionPerformed
-
+    
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
@@ -211,6 +175,58 @@ public class ViewForm extends javax.swing.JFrame {
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_ReturntoMainMenuActionPerformed
+
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        // TODO add your handling code here:
+    String patientID = jTextField2.getText();
+    boolean patientExist = checkPatientExists(patientID);
+
+    if (patientExist) {
+        System.out.println("Patient ID found");
+        jTextArea1.setText("Patient ID found.");
+        String patientDetails = getPatientDetails(patientID);
+        jTextArea1.setText(patientDetails);
+    } else {
+        System.out.println("Patient ID not found!");
+        jTextArea1.setText("No details found for the given patient ID.");
+    }
+    }
+
+    private boolean checkPatientExists(String patientID) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+        String line;
+        boolean foundPatient = false;
+        while ((line = br.readLine()) != null) {
+            if (line.equals("Patient ID: " + patientID)) {
+                return true; // Patient ID exists in the text file
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return false; // Patient ID not found in the text file
+    }
+
+    private String getPatientDetails(String patientID) {
+        StringBuilder details = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals(patientID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    details.append(line).append("\n");
+                    if (details.toString().split("\n").length >= 4) {
+                    break;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return details.toString();
+    }//GEN-LAST:event_SubmitActionPerformed
 
     /**
      * @param args the command line arguments
