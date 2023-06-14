@@ -407,48 +407,6 @@ public class View extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_PatientMouseClicked
 
-//    private void ViewPatientMouseClicked(java.awt.event.MouseEvent evt){
-//        //Get the selected patient ID
-//       ArrayList<String> patientIDs = getPatientID();
-//        
-//        showPatientDetails(pateintDetails);
-//    }
-//    
-//    private void showPatientIDs(ArrayList<String> patientIDs) {
-//        //Assume you have a component named patientIDList to display the patient IDs
-//        DefaultListModel<String> model = new DefaultListModel<>();
-//        
-//        for (String id : patientIDs) {
-//            model.addElement(id);
-//        }
-//        
-//        patientIDList.setModel(model);
-//    }
-//    
-//    private String readPatientDetails(String patientID) {
-//        StringBuilder patientDetails = new StringBuilder();
-//        
-//        try (BufferReader reader = new BufferedReader(new FileReader("patient_details.txt"))){
-//                String line;
-//                while ((line = reader.readerLine()) != null){
-//                    String[] parts = line.split(",");
-//                    String id = parts[0].trim();
-//                    
-//                    if (id.eqauls(patientID)) {
-//                        patientDetails.append(line).append("\n");
-//                    }
-//                }    
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        
-//        return patientDetails.toString();
-//    }
-//    
-//    private void showPatientDetails(String patientDetails) {
-//        JOptionPane.showMessageDialog(null, patientDetails, "Patient Details", JOptionPane.INFORMATION_MESAAGE);
-//    }
-    
     private void ProcedureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProcedureMouseClicked
         ViewForm vf = new ViewForm();
         vf.setVisible(true);
