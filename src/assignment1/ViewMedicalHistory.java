@@ -4,23 +4,18 @@
  */
 package assignment1;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import javax.swing.JFrame;
 
 /**
  *
  * @author ooiju
  */
-public class ViewForm extends javax.swing.JFrame {
+public class ViewMedicalHistory extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public ViewForm() {
+    public ViewMedicalHistory() {
         initComponents();
     }
 
@@ -114,7 +109,7 @@ public class ViewForm extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("View Patient");
+        jLabel7.setText("Medical History");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -159,48 +154,6 @@ public class ViewForm extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        
-        String patientID = jTextField2.getText();
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            writer.write(patientID);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            String storedPatientID = reader.readLine();
-            jTextArea1.setText("Stored Patient ID: " + storedPatientID);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-        String line;
-        StringBuilder details = new StringBuilder();
-        boolean found = false;
-
-        while ((line = reader.readLine()) != null) {
-            if (line.equals(patientID)) {
-                found = true;
-                details.append(line).append("\n");
-                // Read and append additional details from the file if needed
-                // For example:
-                // details.append(reader.readLine()).append("\n");
-                // details.append(reader.readLine()).append("\n");
-            }
-        }
-
-        if (found) {
-            jTextArea1.setText(details.toString());
-        } else {
-            jTextArea1.setText("No details found for the given patient ID.");
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-        jTextArea1.setText("Error occurred while reading the file.");
-    }
-
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
@@ -229,21 +182,23 @@ public class ViewForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewForm().setVisible(true);
+                new ViewMedicalHistory().setVisible(true);
             }
         });
     }
