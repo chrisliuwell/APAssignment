@@ -242,7 +242,7 @@ public class Registration extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         try {
-            FileWriter writer = new FileWriter("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Text/Accounts.txt", true);
+            FileWriter writer = new FileWriter("../APAssignment/src/Text/Accounts.txt", true);
             writer.write("\n");
             writer.write(Username.getText()+":"+Password.getText());
             writer.close();

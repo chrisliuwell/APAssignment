@@ -32,7 +32,7 @@ public class Patientdetails extends javax.swing.JFrame {
     
     
     /**
-     * Creates new form patientdetails
+     * Creates new form patient details
      */
     public Patientdetails() {
         initComponents();
@@ -424,7 +424,7 @@ public class Patientdetails extends javax.swing.JFrame {
 
             
          try {
-            FileWriter writer = new FileWriter("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Text/Patient Details.txt", true);
+            FileWriter writer = new FileWriter("../APAssignment/src/Text/Patient Details.txt", true);
             writer.write(Data);
             writer.write(Data2);
             writer.write(Data3);

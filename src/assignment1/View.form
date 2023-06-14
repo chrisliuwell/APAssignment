@@ -146,7 +146,7 @@
             <Component class="javax.swing.JLabel" name="CloseIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/close.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/close.png&quot;)" type="code"/>
                 </Property>
               </Properties>
               <Events>
@@ -207,7 +207,7 @@
             <Component class="javax.swing.JLabel" name="PatientIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Patient Details.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Patient Details.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PatientIcon"/>
               </Properties>
@@ -263,7 +263,7 @@
             <Component class="javax.swing.JLabel" name="ProcedureIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Procedure Form.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Procedure Form.png&quot;)" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -318,7 +318,7 @@
             <Component class="javax.swing.JLabel" name="MedicalHistoryIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Medical History.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Medical History.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MedicalHistoryIcon"/>
               </Properties>
@@ -374,7 +374,7 @@
             <Component class="javax.swing.JLabel" name="TreatmentIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Treatment.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Treatment.png&quot;)" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -432,7 +432,7 @@
             <Component class="javax.swing.JLabel" name="AnalysisIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Analysis.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Analysis.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="AnalysisIcon"/>
               </Properties>
@@ -491,7 +491,7 @@
             <Component class="javax.swing.JLabel" name="MedicineIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Medicine.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Medicine.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MedicineIcon"/>
               </Properties>
@@ -544,7 +544,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.ImageIcon(&quot;/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Menu.png&quot;)" type="code"/>
+                  <Connection code="new javax.swing.ImageIcon(&quot;../APAssignment/src/Icons/Menu.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ReturnMainMenuIcon"/>
               </Properties>

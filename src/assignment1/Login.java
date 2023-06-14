@@ -241,7 +241,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private boolean authenticate(String username, String password) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Text/Accounts.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("../APAssignment/src/Text/Accounts.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                   String[] parts = line.split(":");

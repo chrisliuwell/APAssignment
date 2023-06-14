@@ -58,7 +58,7 @@ public class Procedure extends javax.swing.JFrame {
         DeleteLabel.setForeground(new java.awt.Color(255, 255, 255));
         DeleteLabel.setText("PROCEDURE");
 
-        CloseIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/close.png"));
+        CloseIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/close.png"));
         CloseIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CloseIconMouseClicked(evt);
@@ -97,7 +97,7 @@ public class Procedure extends javax.swing.JFrame {
         TreatCourseLabel.setBackground(new java.awt.Color(204, 204, 204));
         TreatCourseLabel.setText("Treatment Course");
 
-        TreatCourseIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Treatment.png"));
+        TreatCourseIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Treatment.png"));
 
         javax.swing.GroupLayout TreatCourseLayout = new javax.swing.GroupLayout(TreatCourse);
         TreatCourse.setLayout(TreatCourseLayout);
@@ -132,7 +132,7 @@ public class Procedure extends javax.swing.JFrame {
         MedicineLabel.setBackground(new java.awt.Color(204, 204, 204));
         MedicineLabel.setText("Medicine");
 
-        MedicineIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Medicine.png"));
+        MedicineIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Medicine.png"));
 
         javax.swing.GroupLayout MedicineLayout = new javax.swing.GroupLayout(Medicine);
         Medicine.setLayout(MedicineLayout);
@@ -167,7 +167,7 @@ public class Procedure extends javax.swing.JFrame {
         CreateProcedureLabel.setBackground(new java.awt.Color(204, 204, 204));
         CreateProcedureLabel.setText("Create Procedure Form");
 
-        CreateProcedureIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Create.png"));
+        CreateProcedureIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Create.png"));
 
         javax.swing.GroupLayout CreateProcedureLayout = new javax.swing.GroupLayout(CreateProcedure);
         CreateProcedure.setLayout(CreateProcedureLayout);
@@ -202,7 +202,7 @@ public class Procedure extends javax.swing.JFrame {
         ReturnMainMenuLabel.setBackground(new java.awt.Color(204, 204, 204));
         ReturnMainMenuLabel.setText("Return to Main Menu");
 
-        ReturnMainMenuIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Menu.png"));
+        ReturnMainMenuIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Menu.png"));
 
         javax.swing.GroupLayout ReturnMainMenuLayout = new javax.swing.GroupLayout(ReturnMainMenu);
         ReturnMainMenu.setLayout(ReturnMainMenuLayout);

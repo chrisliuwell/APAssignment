@@ -52,7 +52,7 @@ public class Treatment extends javax.swing.JFrame {
         DeleteLabel.setForeground(new java.awt.Color(255, 255, 255));
         DeleteLabel.setText("TREATMENT");
 
-        CloseIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/close.png"));
+        CloseIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/close.png"));
         CloseIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CloseIconMouseClicked(evt);
@@ -91,7 +91,7 @@ public class Treatment extends javax.swing.JFrame {
         TFormLabel.setBackground(new java.awt.Color(204, 204, 204));
         TFormLabel.setText("Treatment Form");
 
-        TFromIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Procedure Form.png"));
+        TFromIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Procedure Form.png"));
 
         javax.swing.GroupLayout TreatmentFormLayout = new javax.swing.GroupLayout(TreatmentForm);
         TreatmentForm.setLayout(TreatmentFormLayout);
@@ -126,7 +126,7 @@ public class Treatment extends javax.swing.JFrame {
         ReturnMainMenuLabel.setBackground(new java.awt.Color(204, 204, 204));
         ReturnMainMenuLabel.setText("Return to Main Menu");
 
-        ReturnMainMenuIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Menu.png"));
+        ReturnMainMenuIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Menu.png"));
 
         javax.swing.GroupLayout ReturntoMainMenuLayout = new javax.swing.GroupLayout(ReturntoMainMenu);
         ReturntoMainMenu.setLayout(ReturntoMainMenuLayout);

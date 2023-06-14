@@ -285,7 +285,7 @@ public class TreatmentForm extends javax.swing.JFrame {
 
 
            try {
-            FileWriter writer = new FileWriter("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Text/Treatment Details.txt", true);
+            FileWriter writer = new FileWriter("../APAssignment/src/Text/Treatment Details.txt", true);
             writer.write(Data);
             writer.write(Data2);
             writer.write(Data3);

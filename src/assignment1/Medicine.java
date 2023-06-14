@@ -229,7 +229,7 @@ public class Medicine extends javax.swing.JFrame {
 
 
            try {
-            FileWriter writer = new FileWriter("C:\\Users\\ooiju\\Desktop\\Assignment AP\\Assignment Part B\\Medicine.txt", true);
+            FileWriter writer = new FileWriter("../APAssignment/src/Text/Medicine.txt", true);
             writer.write(Data);
             writer.write(Data2);
             writer.write(Data3);

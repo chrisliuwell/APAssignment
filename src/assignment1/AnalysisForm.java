@@ -370,7 +370,7 @@ public class AnalysisForm extends javax.swing.JFrame {
             String Data10 = "Results: " + "\n" + "--------" + "\n" + tumourDescription + "\n\n\n\n";
           
            try {
-            FileWriter writer = new FileWriter("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Text/Analysis Form.txt", true);
+            FileWriter writer = new FileWriter("../APAssignment/src/Text/Analysis Form.txt", true);
             writer.write(Data);
             writer.write(Data2);
             writer.write(Data3);

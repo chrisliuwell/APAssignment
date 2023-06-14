@@ -70,7 +70,7 @@ public class MainMenu extends javax.swing.JFrame {
         DeleteLabel.setForeground(new java.awt.Color(255, 255, 255));
         DeleteLabel.setText("MAIN MENU");
 
-        CloseIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/close.png"));
+        CloseIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/close.png"));
         CloseIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CloseIconMouseClicked(evt);
@@ -109,7 +109,7 @@ public class MainMenu extends javax.swing.JFrame {
         AnalysisLabel.setBackground(new java.awt.Color(204, 204, 204));
         AnalysisLabel.setText("Analysis");
 
-        AnalysisIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Analysis.png"));
+        AnalysisIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Analysis.png"));
         AnalysisIcon.setText("Analysis Icon");
 
         javax.swing.GroupLayout AnalysisLayout = new javax.swing.GroupLayout(Analysis);
@@ -145,7 +145,7 @@ public class MainMenu extends javax.swing.JFrame {
         PatientLabel.setBackground(new java.awt.Color(204, 204, 204));
         PatientLabel.setText("Patient Details");
 
-        PatientIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Patient Details.png"));
+        PatientIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Patient Details.png"));
         PatientIcon.setText("PatientIcon");
 
         javax.swing.GroupLayout PatientLayout = new javax.swing.GroupLayout(Patient);
@@ -181,7 +181,7 @@ public class MainMenu extends javax.swing.JFrame {
         MedicalHistoryLabel.setBackground(new java.awt.Color(204, 204, 204));
         MedicalHistoryLabel.setText("Medical History");
 
-        MedicalHistoryIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Medical History.png"));
+        MedicalHistoryIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Medical History.png"));
 
         javax.swing.GroupLayout MedicalHistoryLayout = new javax.swing.GroupLayout(MedicalHistory);
         MedicalHistory.setLayout(MedicalHistoryLayout);
@@ -216,7 +216,7 @@ public class MainMenu extends javax.swing.JFrame {
         ProcedureLabel.setBackground(new java.awt.Color(204, 204, 204));
         ProcedureLabel.setText("Procedure");
 
-        ProcedureIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Procedure Form.png"));
+        ProcedureIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Procedure Form.png"));
 
         javax.swing.GroupLayout ProcedureLayout = new javax.swing.GroupLayout(Procedure);
         Procedure.setLayout(ProcedureLayout);
@@ -251,7 +251,7 @@ public class MainMenu extends javax.swing.JFrame {
         ViewLabel.setBackground(new java.awt.Color(204, 204, 204));
         ViewLabel.setText("View");
 
-        ViewIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/View.png"));
+        ViewIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/View.png"));
 
         javax.swing.GroupLayout ViewLayout = new javax.swing.GroupLayout(View);
         View.setLayout(ViewLayout);
@@ -286,7 +286,7 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveLabel.setBackground(new java.awt.Color(204, 204, 204));
         RemoveLabel.setText("Remove");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Delete.png"));
+        jLabel3.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Delete.png"));
 
         javax.swing.GroupLayout RemoveLayout = new javax.swing.GroupLayout(Remove);
         Remove.setLayout(RemoveLayout);
@@ -321,7 +321,7 @@ public class MainMenu extends javax.swing.JFrame {
         EditLabel.setBackground(new java.awt.Color(204, 204, 204));
         EditLabel.setText("Edit");
 
-        EditIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Edit.png"));
+        EditIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Edit.png"));
 
         javax.swing.GroupLayout EditLayout = new javax.swing.GroupLayout(Edit);
         Edit.setLayout(EditLayout);
@@ -356,7 +356,7 @@ public class MainMenu extends javax.swing.JFrame {
         RegistIcon.setBackground(new java.awt.Color(204, 204, 204));
         RegistIcon.setText("Account Registration");
 
-        RegistrationIcon.setIcon(new javax.swing.ImageIcon("/Users/chrisliuwell/Full_of_me/Java/Assignment1/src/Icons/Registration.png"));
+        RegistrationIcon.setIcon(new javax.swing.ImageIcon("../APAssignment/src/Icons/Registration.png"));
 
         javax.swing.GroupLayout RegistrationLayout = new javax.swing.GroupLayout(Registration);
         Registration.setLayout(RegistrationLayout);
