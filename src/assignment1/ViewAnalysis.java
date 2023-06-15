@@ -178,54 +178,53 @@ public class ViewAnalysis extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String analysisID = jTextField2.getText();
-        boolean patientsExist = checkAnalysisResults(analysisID);
+    boolean patientExist = checkPatientExists(analysisID);
 
-        if (patientsExist) {
-            System.out.println("Id analysis has been found");
-            String patientDetails = getPatientAnalysisResults(analysisID);
-            jTextArea1.setText("Analysis ID found.\n" + patientDetails);
+    if (patientExist) {
+        System.out.println("Medical History found");
+        String patientDetails = getPatientDetails(analysisID);
+        jTextArea1.setText("Medical History Record:\n" + patientDetails);
+        
+    } else {
+        System.out.println("Patient ID not found!");
+        jTextArea1.setText("No details found for the given patient ID.");
+    }
+    }
 
-        } else {
-            System.out.println("Analysis ID not found!");
-            jTextArea1.setText("No details found for the given analysis ID.");
-        }
-        }
-
-        private boolean checkAnalysisResults(String analysisID) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
-            String line;
-            boolean foundPatient = false;
-            while ((line = br.readLine()) != null) {
-                if (line.equals("Patient ID: " + analysisID)) {
-                    return true; // analysis ID exists in the text file
-                }
+    private boolean checkPatientExists(String analysisID) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
+        String line;
+        boolean foundPatient = false;
+        while ((line = br.readLine()) != null) {
+            if (line.equals("Patient ID: " + analysisID)) {
+                return true; // Patient ID exists in the text file
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return false; // analysis ID not found in the text file
-        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return false; // Patient ID not found in the text file
+    }
 
-        private String getPatientAnalysisResults(String analysisID) {
-        StringBuilder details = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
-            String line;
-            boolean foundPatient = false;
-            while ((line = br.readLine()) != null) {
-                if (line.equals("Analaysis ID: " + analysisID)) {
-                    foundPatient = true;
-                } else if (foundPatient) {
-                    if (line.startsWith("Analysi ID")) {
-                        break;
-                    }
-                    details.append(line).append("\n");
+    private String getPatientDetails(String analysisID) {
+    StringBuilder details = new StringBuilder();
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
+        String line;
+        boolean foundPatient = false;
+        while ((line = br.readLine()) != null) {
+            if (line.equals("Analysis ID: " + analysisID)) {
+                foundPatient = true;
+            } else if (foundPatient) {
+                if (line.startsWith("Analysis ID")) {
+                    break;
                 }
+                details.append(line).append("\n");
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return details.toString();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**
