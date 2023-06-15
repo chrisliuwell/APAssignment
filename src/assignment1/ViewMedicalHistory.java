@@ -4,6 +4,9 @@
  */
 package assignment1;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JFrame;
 
 /**
@@ -62,6 +65,11 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         jLabel2.setText("Enter patient ID:");
 
         Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
 
         ReturntoMainMenu.setText("Return to Main Menu");
         ReturntoMainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +162,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
+        String patientID = jTextField2.getText();
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
@@ -164,6 +173,51 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_ReturntoMainMenuActionPerformed
+
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        // TODO add your handling code here:
+        
+        String patientID = jTextField2.getText();
+    boolean patientExist = checkPatientExists(patientID);
+
+    if (patientExist) {
+        System.out.println("Medical History found");
+        String patientDetails = getPatientDetails(patientID);
+        jTextArea1.setText("Medical History Record:\n" + patientDetails);
+        
+    } else {
+        System.out.println("Patient ID not found!");
+        jTextArea1.setText("No details found for the given patient ID.");
+    }
+    }
+
+    private boolean checkPatientExists(String patientID) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+        String line;
+        boolean foundPatient = false;
+        while ((line = br.readLine()) != null) {
+            if (line.equals("Patient ID: " + patientID)) {
+                return true; // Patient ID exists in the text file
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return false; // Patient ID not found in the text file
+    }
+
+    private String getPatientDetails(String patientID) {
+    StringBuilder details = new StringBuilder();
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            details.append(line).append("\n");
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return details.toString();
+    }//GEN-LAST:event_SubmitActionPerformed
 
     /**
      * @param args the command line arguments
