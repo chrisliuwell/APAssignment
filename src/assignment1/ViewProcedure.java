@@ -5,23 +5,20 @@
 package assignment1;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFrame;
-
 
 /**
  *
  * @author ooiju
  */
-public class ViewForm extends javax.swing.JFrame {
+public class ViewProcedure extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public ViewForm() {
+    public ViewProcedure() {
         initComponents();
     }
 
@@ -120,7 +117,7 @@ public class ViewForm extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("View Patient");
+        jLabel7.setText("View Procedure");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -164,9 +161,10 @@ public class ViewForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        String patientID = jTextField2.getText();
+        // TODO add your handling code here:
+        String procedureID = jTextField2.getText();
     }//GEN-LAST:event_jTextField2ActionPerformed
-    
+
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
@@ -178,55 +176,47 @@ public class ViewForm extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-    String patientID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(patientID);
+        
+        String procedureID = jTextField2.getText();
+    boolean patientExist = checkPatientExists(procedureID);
 
     if (patientExist) {
-        System.out.println("Patient ID found");
-        String patientDetails = getPatientDetails(patientID);
-        jTextArea1.setText("Patient Details:\n" + patientDetails);
+        System.out.println("Medical Procedure found");
+        String patientDetails = getPatientDetails(procedureID);
+        jTextArea1.setText("Medical Procedure Record:\n" + patientDetails);
         
     } else {
-        System.out.println("Patient ID not found!");
-        jTextArea1.setText("No details found for the given patient ID.");
+        System.out.println("Patient Procedure ID not found!");
+        jTextArea1.setText("No details found for the given procedure ID.");
     }
     }
 
     private boolean checkPatientExists(String patientID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                return true; // Patient ID exists in the text file
+            if (line.equals("Procedure ID: " + patientID)) {
+                return true; // Procedure ID exists in the text file
             }
         }
     } catch (IOException e) {
         e.printStackTrace();
     }
-    return false; // Patient ID not found in the text file
+    return false; // Procedure ID not found in the text file
     }
 
-    private String getPatientDetails(String patientID) {
+    private String getPatientDetails(String procedureID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
         String line;
-        boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Patient ID")) {
-                    break;
-                }
-                details.append(line).append("\n");
-            }
+            details.append(line).append("\n");
         }
     } catch (IOException e) {
         e.printStackTrace();
     }
     return details.toString();
-
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**
@@ -246,21 +236,27 @@ public class ViewForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewProcedure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewProcedure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewProcedure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewProcedure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewForm().setVisible(true);
+                new ViewProcedure().setVisible(true);
             }
         });
     }
