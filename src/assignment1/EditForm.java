@@ -192,7 +192,7 @@ public class EditForm extends javax.swing.JFrame {
         }
     }    
     private boolean checkPatientExists(String patientID) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
             String line;
             boolean foundPatient = false;
             while ((line = br.readLine()) != null) {
@@ -208,7 +208,7 @@ public class EditForm extends javax.swing.JFrame {
 
         private String getPatientDetails(String patientID) {
             StringBuilder details = new StringBuilder();
-            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     details.append(line).append("\n");
@@ -221,8 +221,8 @@ public class EditForm extends javax.swing.JFrame {
 
         private void editPatientDetails(String patientID, String newDetails) {
             try {
-                File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt");
-                File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\TempPatientDetails.txt");
+                File inputFile = new File("../APAssignment/src/Text/Patient Details.txt");
+                File tempFile = new File("../APAssignment/src/Text/TempPatientDetails.txt");
 
                 BufferedReader br = new BufferedReader(new FileReader(inputFile));
                 BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));

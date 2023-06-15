@@ -192,7 +192,7 @@ public class ViewProcedure extends javax.swing.JFrame {
     }
 
     private boolean checkPatientExists(String procedureID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Procedure Form.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
@@ -208,7 +208,7 @@ public class ViewProcedure extends javax.swing.JFrame {
 
     private String getPatientDetails(String procedureID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Procedure Form.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {

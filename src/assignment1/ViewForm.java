@@ -193,7 +193,7 @@ public class ViewForm extends javax.swing.JFrame {
     }
 
     private boolean checkPatientExists(String patientID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
@@ -209,7 +209,7 @@ public class ViewForm extends javax.swing.JFrame {
 
     private String getPatientDetails(String patientID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
