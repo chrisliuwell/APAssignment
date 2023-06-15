@@ -181,9 +181,9 @@ public class ViewProcedure extends javax.swing.JFrame {
     boolean patientExist = checkPatientExists(procedureID);
 
     if (patientExist) {
-        System.out.println("Medical Procedure found");
+        System.out.println("Treatment details found!");
         String patientDetails = getPatientDetails(procedureID);
-        jTextArea1.setText("Medical Procedure Record:\n" + patientDetails);
+        jTextArea1.setText("Medical Treatment Record:\n" + patientDetails);
         
     } else {
         System.out.println("Patient Procedure ID not found!");
@@ -191,12 +191,12 @@ public class ViewProcedure extends javax.swing.JFrame {
     }
     }
 
-    private boolean checkPatientExists(String patientID) {
+    private boolean checkPatientExists(String procedureID) {
     try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            if (line.equals("Procedure ID: " + patientID)) {
+            if (line.equals("Procedure ID: " + procedureID)) {
                 return true; // Procedure ID exists in the text file
             }
         }
@@ -210,8 +210,16 @@ public class ViewProcedure extends javax.swing.JFrame {
     StringBuilder details = new StringBuilder();
     try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
         String line;
+        boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            details.append(line).append("\n");
+            if (line.equals("Procedure ID: " + procedureID)) {
+                foundPatient = true;
+            } else if (foundPatient) {
+                if (line.startsWith("Procedure ID")) {
+                    break;
+                }
+                details.append(line).append("\n");
+            }
         }
     } catch (IOException e) {
         e.printStackTrace();

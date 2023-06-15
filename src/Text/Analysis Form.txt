@@ -1,4 +1,4 @@
-Analysis ID: 555555
+Analysis ID: 55555
 Date: 02/03/2023
 
 Blood Analysis: 
@@ -70,5 +70,75 @@ Results:
 Everything is fine
 
 
+Analysis ID: 66666
+Date: 02/03/2023
+
+Blood Analysis: 
+--------------
+Blood ID : B45
+
+Blood Type : AB
+
+Glucose Level : 25% 
+
+Electrolytes Volume : 70%
+
+Collection Date : 01/03/2023
+
+
+Results: 
+--------
+Everything is fine
+
+
+
+Urine Analysis: 
+--------------
+Urine ID : U45
+
+Colour : Yellowish
+
+Transparency Level : 2
+
+Density : 20%
+
+Collection Date : 01/03/2023
+
+
+Results: 
+--------
+Everything is fine
+
+
+
+Sputum Analysis: 
+---------------
+Sputum ID : S45
+
+Density : 23%
+
+Volume : 25%
+
+Collection Date : 01/03/2023
+
+
+Results: 
+--------
+Everything is fine
+
+
+
+Tumour Analysis: 
+---------------
+Tumour ID : T45
+
+Size : 0.5cm
+
+Collection Date : 01/03/2023
+
+
+Results: 
+--------
+Everything is fine
 
 
