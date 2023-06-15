@@ -13,12 +13,12 @@ import javax.swing.JFrame;
  *
  * @author ooiju
  */
-public class ViewMedicalHistory extends javax.swing.JFrame {
+public class ViewMedicine extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public ViewMedicalHistory() {
+    public ViewMedicine() {
         initComponents();
     }
 
@@ -117,7 +117,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("Medical History");
+        jLabel7.setText("View Medicine");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -162,7 +162,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        String patientID = jTextField2.getText();
+        String medicineID = jTextField2.getText();
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
@@ -177,54 +177,52 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
         
-        String patientID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(patientID);
+        String medicineID = jTextField2.getText();
+    boolean procedureExists = checkProcedureExists(medicineID);
 
-    if (patientExist) {
-        System.out.println("Medical History found");
-        String patientDetails = getPatientDetails(patientID);
-        jTextArea1.setText("Medical History Record:\n" + patientDetails);
-        
+    if (procedureExists) {
+        System.out.println("Medical Procedure found");
+        String procedureDetails = getProcedureDetails(medicineID);
+        jTextArea1.setText("Medical Procedure Record:\n" + procedureDetails);
     } else {
-        System.out.println("Patient ID not found!");
-        jTextArea1.setText("No details found for the given patient ID.");
+        System.out.println("Procedure ID not found!");
+        jTextArea1.setText("No details found for the given procedure ID.");
     }
     }
 
-    private boolean checkPatientExists(String patientID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                return true; // Patient ID exists in the text file
-            }
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return false; // Patient ID not found in the text file
-    }
-
-    private String getPatientDetails(String patientID) {
-    StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Patient ID")) {
-                    break;
+    private boolean checkProcedureExists(String medicineID) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Medicine ID: " + medicineID)) {
+                    return true; // Procedure ID exists in the text file
                 }
-                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
+        return false; // Procedure ID not found in the text file
     }
-    return details.toString();
+
+    private String getProcedureDetails(String medicineID) {
+        StringBuilder details = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
+            String line;
+            boolean foundProcedure = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Medicine ID: " + medicineID)) {
+                    foundProcedure = true;
+                } else if (foundProcedure) {
+                    if (line.startsWith("Medicine ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**
@@ -244,14 +242,26 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -260,7 +270,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMedicalHistory().setVisible(true);
+                new ViewMedicine().setVisible(true);
             }
         });
     }

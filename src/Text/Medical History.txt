@@ -11,3 +11,14 @@ Ward No.: A344
 Additional Notes: Need more care for this patients
 
 
+Patient ID: 0446
+Patient Name: Lorelyn De Leon
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
