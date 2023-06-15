@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFrame;
 
+
 /**
  *
  * @author ooiju
@@ -180,83 +181,93 @@ public class EditForm extends javax.swing.JFrame {
             jTextArea1.setText("Patient ID found.\n" + patientDetails);
 
             // Implement the edit functionality here
-            editPatientDetails(patientID, "New details go here");
-            System.out.println("Patient details updated successfully.");
+            String editedDetails = jTextArea1.getText();
+            boolean success = editPatientDetails(patientID, editedDetails);            
 
-            // Update the jTextArea1 with the edited details
-            patientDetails = getPatientDetails(patientID);
-            jTextArea1.setText("Patient ID found.\n" + patientDetails);
+            if (success) {
+                System.out.println("Patient details updated successfully.");
+                jTextArea1.setText("Patient details updated successfully.");
+            } else {
+                System.out.println("Failed to update patient details.");
+                jTextArea1.setText("Failed to update patient details.");
+            }
         } else {
             System.out.println("Patient ID not found!");
             jTextArea1.setText("No details found for the given patient ID.");
         }
-    }    
-    private boolean checkPatientExists(String patientID) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-            String line;
-            boolean foundPatient = false;
-            while ((line = br.readLine()) != null) {
-                if (line.equals("Patient ID: " + patientID)) {
-                    return true; // Patient ID exists in the text file
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false; // Patient ID not found in the text file
     }
-
-        private String getPatientDetails(String patientID) {
-            StringBuilder details = new StringBuilder();
+        private boolean checkPatientExists(String patientID) {
             try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                    details.append(line).append("\n");
+                    if (line.equals("Patient ID: " + patientID)) {
+                        return true; // Patient ID exists in the text file
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return details.toString();
+            return false; // Patient ID not found in the text file
         }
 
-        private void editPatientDetails(String patientID, String newDetails) {
-            try {
-                File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt");
-                File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\TempPatientDetails.txt");
-
-                BufferedReader br = new BufferedReader(new FileReader(inputFile));
-                BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
-
-                String line;
-                boolean patientFound = false;
-                while ((line = br.readLine()) != null) {
-                    if (line.equals("Patient ID: " + patientID)) {
-                        patientFound = true;
-                        bw.write(newDetails);
-                        bw.newLine();
-                    } else {
-                        bw.write(line);
-                        bw.newLine();
+            private String getPatientDetails(String patientID) {
+                StringBuilder details = new StringBuilder();
+                try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+                    String line;
+                    boolean foundPatient = false;
+                    while ((line = br.readLine()) != null) {
+                        details.append(line).append("\n");
                     }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+                return details.toString();
+            }
 
-                br.close();
-                bw.close();
 
-                if (patientFound) {
-                    if (inputFile.delete()) {
-                        if (!tempFile.renameTo(inputFile)) {
-                            System.out.println("Failed to rename the temporary file.");
-                        }
-                    } else {
-                        System.out.println("Failed to delete the original file.");
-                    }
-                    System.out.println("Patient details updated successfully.");
+            private boolean editPatientDetails(String patientID, String newDetails) {
+        try {
+            File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt");
+            File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\TempPatientDetails.txt");
+
+            BufferedReader br = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
+
+            String line;
+            boolean patientFound = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Patient ID: " + patientID)) {
+                    patientFound = true;
+                    bw.write(newDetails);
+                    bw.newLine();
                 } else {
-                    System.out.println("Patient ID not found in the file.");
+                    bw.write(line);
+                    bw.newLine();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
+            }
+
+            br.close();
+            bw.close();
+
+            if (patientFound) {
+                if (inputFile.delete()) {
+                    if (!tempFile.renameTo(inputFile)) {
+                        System.out.println("Failed to rename the temporary file.");
+                        return false;
+                    }
+                } else {
+                    System.out.println("Failed to delete the original file.");
+                    return false;
+                }
+                System.out.println("Patient details updated successfully.");
+                return true;
+            } else {
+                System.out.println("Patient ID not found in the file.");
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }//GEN-LAST:event_SubmitActionPerformed
 
@@ -319,4 +330,8 @@ public class EditForm extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    private void getText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

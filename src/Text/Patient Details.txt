@@ -1,25 +1,95 @@
+Patient ID found.
+Patient ID found.
+Patient ID found.
+Patient ID found.
+Patient ID found.
+Patient ID found.
+Patient ID found.
 Patient ID: 08873
-Patient Name: Tan Bing Hock
-Gender: Male
-Date Of Birth: 03/05/2001
-Age: 23
-National ID: 017288-05-0223
-Contact Number: 012-5788892
-Email: binghok@gmail.com
-Address: 57 Dtr Keledang Tmn Perindustrian Chandan Raya 31450 Menglembu Menglembu Perak 31450 Malaysia Mengle 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
-Patient ID: 08888
-Patient Name: Lorelyn
-Gender: Female
-Date Of Birth: 03/05/2001
-Age: 23
-National ID: 017288-05-0223
-Contact Number: 012-5788892
-Email: binghok@gmail.com
-Address: 57 Dtr Keledang Tmn Perindustrian Chandan Raya 31450 Menglembu Menglembu Perak 31450 Malaysia Mengle 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
 
+Patient Name: Jonathan Lim
+Treatment Date: 20/06/2023
+Treatment Time: 25/06/2023
+Treatment Result: Succesful treatment
+Observation: Scar recovered gradually
+Major complications: Minor urinary retention
+Doctor name: Tan Lim Bing
+Nurse name: Kok Wei Mei
+Ward No.: A344
+Additional Notes: Need more care for this patients
