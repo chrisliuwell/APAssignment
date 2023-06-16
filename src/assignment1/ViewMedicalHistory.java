@@ -185,6 +185,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         String patientDetails = getPatientDetails(patientID);
         jTextArea1.setText("Medical History Record:\n" + patientDetails);
         
+        
     } else {
         System.out.println("Patient ID not found!");
         jTextArea1.setText("No details found for the given patient ID.");

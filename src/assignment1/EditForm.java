@@ -174,58 +174,61 @@ public class EditForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         String patientID = jTextField2.getText();
         boolean patientExist = checkPatientExists(patientID);
+        String editedDetails = jTextArea1.getText();
 
         if (patientExist) {
             System.out.println("Patient ID found");
             String patientDetails = getPatientDetails(patientID);
             jTextArea1.setText("Patient ID found.\n" + patientDetails);
 
-            // Implement the edit functionality here
-            String editedDetails = jTextArea1.getText();
-            boolean success = editPatientDetails(patientID, editedDetails);            
-
-            if (success) {
-                System.out.println("Patient details updated successfully.");
-                jTextArea1.setText("Patient details updated successfully.");
+            // Enable editing of the JTextArea
+            jTextArea1.setEditable(true);
+            jTextArea1.setFocusable(true);
+            jTextArea1.requestFocus();
+            
+            if (!patientDetails.equals(editedDetails)) {
+            boolean saveSuccessful = editPatientDetails(patientID, editedDetails);
+            if (saveSuccessful) {
+                System.out.println("Edited details saved successfully.");
             } else {
-                System.out.println("Failed to update patient details.");
-                jTextArea1.setText("Failed to update patient details.");
+                System.out.println("Failed to save the edited details.");
             }
+        }  
         } else {
             System.out.println("Patient ID not found!");
             jTextArea1.setText("No details found for the given patient ID.");
         }
     }
-        private boolean checkPatientExists(String patientID) {
-            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    if (line.equals("Patient ID: " + patientID)) {
-                        return true; // Patient ID exists in the text file
-                    }
+
+    private boolean checkPatientExists(String patientID) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Patient ID: " + patientID)) {
+                    return true; // Patient ID exists in the text file
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-            return false; // Patient ID not found in the text file
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return false; // Patient ID not found in the text file
+    }
 
-            private String getPatientDetails(String patientID) {
-                StringBuilder details = new StringBuilder();
-                try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
-                    String line;
-                    boolean foundPatient = false;
-                    while ((line = br.readLine()) != null) {
-                        details.append(line).append("\n");
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return details.toString();
+    private String getPatientDetails(String patientID) {
+        StringBuilder details = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return details.toString();
+    }
 
-
-            private boolean editPatientDetails(String patientID, String newDetails) {
+    private boolean editPatientDetails(String patientID, String newDetails) {
         try {
             File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt");
             File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\TempPatientDetails.txt");
@@ -238,8 +241,9 @@ public class EditForm extends javax.swing.JFrame {
             while ((line = br.readLine()) != null) {
                 if (line.equals("Patient ID: " + patientID)) {
                     patientFound = true;
-                    bw.write(newDetails);
+                    bw.write(line);
                     bw.newLine();
+                    br.readLine(); // Skip the old details line
                 } else {
                     bw.write(line);
                     bw.newLine();
@@ -270,7 +274,8 @@ public class EditForm extends javax.swing.JFrame {
             return false;
         }
     }//GEN-LAST:event_SubmitActionPerformed
-
+       
+            
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
