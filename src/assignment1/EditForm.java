@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -177,23 +178,31 @@ public class EditForm extends javax.swing.JFrame {
         String editedDetails = jTextArea1.getText();
 
         if (patientExist) {
-            System.out.println("Patient ID found");
             String patientDetails = getPatientDetails(patientID);
-            jTextArea1.setText("Patient ID found.\n" + patientDetails);
+            jTextArea1.setText(patientDetails);
 
             // Enable editing of the JTextArea
             jTextArea1.setEditable(true);
             jTextArea1.setFocusable(true);
             jTextArea1.requestFocus();
-            
+
+            // Check if details are edited
             if (!patientDetails.equals(editedDetails)) {
-            boolean saveSuccessful = editPatientDetails(patientID, editedDetails);
-            if (saveSuccessful) {
-                System.out.println("Edited details saved successfully.");
-            } else {
-                System.out.println("Failed to save the edited details.");
+                boolean saveSuccessful = false;
+                int option = JOptionPane.showOptionDialog(null, "Do you want to save the edited details?", "Save Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                if (option == JOptionPane.YES_OPTION) {
+                    saveSuccessful = editPatientDetails(patientID, editedDetails);
+                }
+
+                if (saveSuccessful) {
+                    System.out.println("Edited details saved successfully.");
+                    // Update the patient details and display the edited details
+                    patientDetails = editedDetails;
+                    jTextArea1.setText(patientDetails);
+                } else if (option == JOptionPane.YES_OPTION) {
+                    System.out.println("Failed to save the edited details.");
+                }
             }
-        }  
         } else {
             System.out.println("Patient ID not found!");
             jTextArea1.setText("No details found for the given patient ID.");
@@ -231,7 +240,7 @@ public class EditForm extends javax.swing.JFrame {
     private boolean editPatientDetails(String patientID, String newDetails) {
         try {
             File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt");
-            File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\TempPatientDetails.txt");
+            File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Temp Patient Details.txt");
 
             BufferedReader br = new BufferedReader(new FileReader(inputFile));
             BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
@@ -243,7 +252,8 @@ public class EditForm extends javax.swing.JFrame {
                     patientFound = true;
                     bw.write(line);
                     bw.newLine();
-                    br.readLine(); // Skip the old details line
+                    bw.write(newDetails); // Write the new details instead of skipping the line
+                    bw.newLine();
                 } else {
                     bw.write(line);
                     bw.newLine();
