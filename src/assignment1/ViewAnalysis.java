@@ -178,17 +178,17 @@ public class ViewAnalysis extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String analysisID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(analysisID);
+        boolean patientExist = checkPatientExists(analysisID);
 
-    if (patientExist) {
-        System.out.println("Medical History found");
-        String patientDetails = getPatientDetails(analysisID);
-        jTextArea1.setText("Medical History Record:\n" + patientDetails);
-        
-    } else {
-        System.out.println("Patient ID not found!");
-        jTextArea1.setText("No details found for the given patient ID.");
-    }
+        if (patientExist) {
+            System.out.println("Print Analysis Record:");
+            String patientDetails = getPatientDetails(analysisID);
+            jTextArea1.setText("Medical Analysis Record:\n" + patientDetails);
+
+        } else {
+            System.out.println("Patient Analysis ID not found!");
+            jTextArea1.setText("No details found for the given analysis ID.");
+        }
     }
 
     private boolean checkPatientExists(String analysisID) {
@@ -196,7 +196,7 @@ public class ViewAnalysis extends javax.swing.JFrame {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + analysisID)) {
+            if (line.equals("Analysis ID: " + analysisID)) {
                 return true; // Patient ID exists in the text file
             }
         }

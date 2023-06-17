@@ -186,7 +186,6 @@ public class EditForm extends javax.swing.JFrame {
             jTextArea1.setFocusable(true);
             jTextArea1.requestFocus();
 
-            // Check if details are edited
             if (!patientDetails.equals(editedDetails)) {
                 boolean saveSuccessful = false;
                 int option = JOptionPane.showOptionDialog(null, "Do you want to save the edited details?", "Save Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
@@ -208,7 +207,7 @@ public class EditForm extends javax.swing.JFrame {
             jTextArea1.setText("No details found for the given patient ID.");
         }
     }
-
+    
     private boolean checkPatientExists(String patientID) {
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
             String line;
@@ -220,16 +219,23 @@ public class EditForm extends javax.swing.JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false; // Patient ID not found in the text file
+        return false; 
     }
 
     private String getPatientDetails(String patientID) {
-        StringBuilder details = new StringBuilder();
+    StringBuilder details = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Patient Details.txt"))) {
             String line;
             boolean foundPatient = false;
             while ((line = br.readLine()) != null) {
-                details.append(line).append("\n");
+                if (line.equals("Patient ID: " + patientID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    if (line.startsWith("Patient ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -252,7 +258,7 @@ public class EditForm extends javax.swing.JFrame {
                     patientFound = true;
                     bw.write(line);
                     bw.newLine();
-                    bw.write(newDetails); // Write the new details instead of skipping the line
+                    bw.write(newDetails); 
                     bw.newLine();
                 } else {
                     bw.write(line);
@@ -347,6 +353,14 @@ public class EditForm extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void getText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void updatePatientDetailsInFile(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean checkDetailsSaved(String patientID, String editedDetails) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
