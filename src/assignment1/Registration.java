@@ -19,6 +19,8 @@ public class Registration extends javax.swing.JFrame {
     
     private String username;
     private String password;
+    private String newusername;
+    private String newpassword;
     
     /**
      * Creates new form Login
@@ -241,15 +243,26 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        try {
-            FileWriter writer = new FileWriter("../APAssignment/src/Text/Accounts.txt", true);
-            writer.write("\n");
-            writer.write(Username.getText()+":"+Password.getText());
-            writer.close();
-            JOptionPane.showMessageDialog(this, "Success");
-        } catch (IOException e) {
-            System.out.println("An error occurred while saving the data: " + e.getMessage());
-        }   
+        newusername = Username.getText();
+        newpassword = Password.getText();
+        boolean empty = false;
+        
+        if (newusername.isEmpty()|newpassword.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Username or Password cannot be empty");
+            empty = true;
+        }
+        
+        if(!empty){
+            try {
+                FileWriter writer = new FileWriter("../APAssignment/src/Text/Accounts.txt", true);
+                writer.write("\n");
+                writer.write(Username.getText()+":"+Password.getText());
+                writer.close();
+                JOptionPane.showMessageDialog(this, "Success");
+            } catch (IOException e) {
+                System.out.println("An error occurred while saving the data: " + e.getMessage());
+            }
+        }
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed

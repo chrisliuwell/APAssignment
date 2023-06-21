@@ -164,7 +164,49 @@ public class ViewForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        
         String patientID = jTextField2.getText();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("../APAssignment/src/Text/Patient Details.txt"))) {
+            writer.write(patientID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+            String storedPatientID = reader.readLine();
+            jTextArea1.setText("Stored Patient ID: " + storedPatientID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        try (BufferedReader reader = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+        String line;
+        StringBuilder details = new StringBuilder();
+        boolean found = false;
+
+        while ((line = reader.readLine()) != null) {
+            if (line.equals(patientID)) {
+                found = true;
+                details.append(line).append("\n");
+                // Read and append additional details from the file if needed
+                // For example:
+                // details.append(reader.readLine()).append("\n");
+                // details.append(reader.readLine()).append("\n");
+            }
+        }
+
+        if (found) {
+            jTextArea1.setText(details.toString());
+        } else {
+            jTextArea1.setText("No details found for the given patient ID.");
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+        jTextArea1.setText("Error occurred while reading the file.");
+    }
+
     }//GEN-LAST:event_jTextField2ActionPerformed
     
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
