@@ -397,7 +397,7 @@ public class Delete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PatientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PatientMouseClicked
-        Patientdetails pd = new Patientdetails();
+        DeletePatientDetails pd = new DeletePatientDetails();
         pd.setVisible(true);
         pd.pack();
         pd.setLocationRelativeTo(null);
@@ -406,7 +406,7 @@ public class Delete extends javax.swing.JFrame {
     }//GEN-LAST:event_PatientMouseClicked
 
     private void ProcedureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProcedureMouseClicked
-        Procedure proced = new Procedure();
+        DeleteProcedure proced = new DeleteProcedure();
         proced.setVisible(true);
         proced.pack();
         proced.setLocationRelativeTo(null);
@@ -415,7 +415,7 @@ public class Delete extends javax.swing.JFrame {
     }//GEN-LAST:event_ProcedureMouseClicked
 
     private void TreatmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreatmentMouseClicked
-        Treatment treat = new Treatment();
+        DeleteTreatmentDetails treat = new DeleteTreatmentDetails();
         treat.setVisible(true);
         treat.pack();
         treat.setLocationRelativeTo(null);
@@ -424,7 +424,7 @@ public class Delete extends javax.swing.JFrame {
     }//GEN-LAST:event_TreatmentMouseClicked
 
     private void MedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicineMouseClicked
-        Medicine m = new Medicine();
+        DeleteMedicine m = new DeleteMedicine();
         m.setVisible(true);
         m.pack();
         m.setLocationRelativeTo(null);
@@ -442,7 +442,7 @@ public class Delete extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnMainMenuMouseClicked
 
     private void MedicalHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicalHistoryMouseClicked
-        Medicalhistory mh = new Medicalhistory();
+        DeleteMedicalHistory mh = new DeleteMedicalHistory();
         mh.setVisible(true);
         mh.pack();
         mh.setLocationRelativeTo(null);
@@ -451,7 +451,7 @@ public class Delete extends javax.swing.JFrame {
     }//GEN-LAST:event_MedicalHistoryMouseClicked
 
     private void AnalysisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalysisMouseClicked
-        AnalysisForm af = new AnalysisForm();
+        DeleteAnalysis af = new DeleteAnalysis();
         af.setVisible(true);
         af.pack();
         af.setLocationRelativeTo(null);
