@@ -402,7 +402,7 @@ public class Patientdetails extends javax.swing.JFrame {
             jCheckBox2ActionPerformed(evt);
             
             boolean hasError = false;
-
+            
             if (patientID.isEmpty()) {
                 showErrorMessage("Please fill in the Patient ID field.");
                 hasError = true;
