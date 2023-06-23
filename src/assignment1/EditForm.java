@@ -268,8 +268,10 @@ public class EditForm extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
         }
-    }//GEN-LAST:event_SubmitActionPerformed
 
+    }//GEN-LAST:event_SubmitActionPerformed
+       
+            
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
@@ -334,4 +336,16 @@ public class EditForm extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    private void getText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void updatePatientDetailsInFile(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean checkDetailsSaved(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
