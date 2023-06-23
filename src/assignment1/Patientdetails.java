@@ -25,10 +25,6 @@ public class Patientdetails extends javax.swing.JFrame {
     private String Address;
     private boolean Male;
     private boolean Female;
-
-//    private String ; 
-//    private String ; 
-    
     
     
     /**
