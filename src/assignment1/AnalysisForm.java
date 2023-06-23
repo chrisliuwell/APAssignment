@@ -370,7 +370,7 @@ public class AnalysisForm extends javax.swing.JFrame {
                 showErrorMessage("Please fill in the Date field.");
                 hasError = true;
             }
-
+ 
 
 
             String Data = "Analysis ID: " + userInput1 + "\n";
