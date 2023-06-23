@@ -342,6 +342,10 @@ public class AnalysisForm extends javax.swing.JFrame {
         userInput1 = jTextField1.getText();
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
             jTextField1ActionPerformed(evt);
             jTextField1ActionPerformed(evt);
@@ -355,6 +359,17 @@ public class AnalysisForm extends javax.swing.JFrame {
             String tumourAnalysis = jTextArea7.getText();
             String tumourDescription = jTextArea8.getText();
             
+            boolean hasError = false;
+
+            if (userInput1.isEmpty()) {
+                showErrorMessage("Please fill in the Analysis ID field.");
+                hasError = true;
+            }
+            
+            if (userInput2.isEmpty()) {
+                showErrorMessage("Please fill in the Date field.");
+                hasError = true;
+            }
 
 
 
@@ -369,6 +384,7 @@ public class AnalysisForm extends javax.swing.JFrame {
             String Data9 = "Tumour Analysis: " + "\n" + "---------------" + "\n" + tumourAnalysis + "\n";
             String Data10 = "Results: " + "\n" + "--------" + "\n" + tumourDescription + "\n\n\n\n";
           
+        if (!hasError) {      
            try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Analysis Form.txt", true);
             writer.write(Data);
@@ -387,6 +403,7 @@ public class AnalysisForm extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }     
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
