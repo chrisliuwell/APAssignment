@@ -408,6 +408,10 @@ public class Medicalhistory extends javax.swing.JFrame {
         userInput11 = jTextField11.getText();
     }//GEN-LAST:event_jTextField11ActionPerformed
 
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             jTextField6ActionPerformed(evt);
             jTextField2ActionPerformed(evt);
@@ -421,7 +425,62 @@ public class Medicalhistory extends javax.swing.JFrame {
             jTextField10ActionPerformed(evt);
             jTextField11ActionPerformed(evt);
 
-
+            boolean hasError = false;
+            
+            if (userInput1.isEmpty()) {
+                showErrorMessage("Please fill in the Patient ID field.");
+                hasError = true;
+            }  
+            
+            if (userInput2.isEmpty()) {
+                showErrorMessage("Please fill in the Patient name field.");
+                hasError = true;
+            }  
+            
+            if (userInput3.isEmpty()) {
+                showErrorMessage("Please fill in the Treatment Date field.");
+                hasError = true;
+            }  
+            
+            if (userInput4.isEmpty()) {
+                showErrorMessage("Please fill in the Treatment Time field.");
+                hasError = true;
+            }  
+            
+            if (userInput5.isEmpty()) {
+                showErrorMessage("Please fill in the Treatment Result field.");
+                hasError = true;
+            }  
+            
+            if (userInput6.isEmpty()) {
+                showErrorMessage("Please fill in the Observation field.");
+                hasError = true;
+            }  
+            
+            if (userInput7.isEmpty()) {
+                showErrorMessage("Please fill in the Major complications field.");
+                hasError = true;
+            }  
+            
+            if (userInput8.isEmpty()) {
+                showErrorMessage("Please fill in the Doctor name field.");
+                hasError = true;
+            }  
+            
+            if (userInput9.isEmpty()) {
+                showErrorMessage("Please fill in the Nurse name field.");
+                hasError = true;
+            }  
+            
+            if (userInput10.isEmpty()) {
+                showErrorMessage("Please fill in the Ward No. field.");
+                hasError = true;
+            }  
+            
+            if (userInput11.isEmpty()) {
+                showErrorMessage("Please fill in the Additional Notes field.");
+                hasError = true;
+            }  
 
             String Data = "Patient ID: " + userInput1 + "\n";
             String Data2 = "Patient Name: " + userInput2 + "\n";
@@ -438,7 +497,7 @@ public class Medicalhistory extends javax.swing.JFrame {
             
 
 
-
+        if (!hasError) {     
            try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Medical History.txt", true);
             writer.write(Data);
@@ -458,6 +517,7 @@ public class Medicalhistory extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
