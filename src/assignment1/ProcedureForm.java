@@ -355,6 +355,10 @@ public class ProcedureForm extends javax.swing.JFrame {
         userInput4 = jTextField7.getText();
     }//GEN-LAST:event_jTextField7ActionPerformed
 
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void Submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit1ActionPerformed
             jTextField1ActionPerformed(evt);
             jTextField4ActionPerformed(evt);
@@ -365,7 +369,48 @@ public class ProcedureForm extends javax.swing.JFrame {
             jTextField7ActionPerformed(evt);
             String description = jTextArea1.getText();
             
+            boolean hasError = false;    
+            
+            if (userInput1.isEmpty()) {
+                    showErrorMessage("Please fill in the Procedure ID field.");
+                    hasError = true;
+            }
 
+            if (userInput2.isEmpty()) {
+                    showErrorMessage("Please fill in the Procedure Name field.");
+                    hasError = true;
+            } 
+
+            if (userInput3.isEmpty()) {
+                    showErrorMessage("Please fill in the Procedure Type field.");
+                    hasError = true;
+            } 
+
+            if (userInput4.isEmpty()) {
+                    showErrorMessage("Please fill in the Date field.");
+                    hasError = true;
+            } 
+
+            if (userInput5.isEmpty()) {
+                    showErrorMessage("Please fill in the Time field.");
+                    hasError = true;
+            } 
+
+            if (userInput6.isEmpty()) {
+                    showErrorMessage("Please fill in the Duration field.");
+                    hasError = true;
+            } 
+
+            if (userInput7.isEmpty()) {
+                    showErrorMessage("Please fill in the Cost field.");
+                    hasError = true;
+            } 
+
+            if (description.isEmpty()) {
+                    showErrorMessage("Please fill in the Description field.");
+                    hasError = true;
+            }
+        
             String Data = "Procedure ID: " + userInput1 + "\n";
             String Data2 = "Procedure Name: " + userInput2 + "\n";
             String Data3 = "Procedure Type: " + userInput3 + "\n";
@@ -379,7 +424,7 @@ public class ProcedureForm extends javax.swing.JFrame {
             
             
 
-
+        if (!hasError) {     
            try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Procedure Form.txt", true);
             writer.write(Data);
@@ -398,6 +443,7 @@ public class ProcedureForm extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }     
     }//GEN-LAST:event_Submit1ActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
