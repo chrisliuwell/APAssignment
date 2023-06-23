@@ -384,6 +384,10 @@ public class Patientdetails extends javax.swing.JFrame {
         Male = jCheckBox1.isSelected();
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTextField1ActionPerformed(evt);
             jTextField6ActionPerformed(evt);
@@ -397,7 +401,60 @@ public class Patientdetails extends javax.swing.JFrame {
             jCheckBox1ActionPerformed(evt);
             jCheckBox2ActionPerformed(evt);
             
+            boolean hasError = false;
 
+            if (patientID.isEmpty()) {
+                showErrorMessage("Please fill in the Patient ID field.");
+                hasError = true;
+            }
+
+            // Validate patient name
+            if (patientName.isEmpty()) {
+                showErrorMessage("Please fill in the Patient Name field.");
+                hasError = true;
+            }
+
+            // Validate date of birth
+            if (DateOfBirth.isEmpty()) {
+                showErrorMessage("Please fill in the Date of Birth field.");
+                hasError = true;
+            }
+
+            // Validate age
+            try {
+                int ageValue = Integer.parseInt(age);
+                if (ageValue <= 0) {
+                    showErrorMessage("Age must be a positive integer.");
+                    hasError = true;
+                }
+            } catch (NumberFormatException e) {
+                showErrorMessage("Invalid age value. Please enter a valid integer.");
+                hasError = true;
+            }
+
+            // Validate National ID
+            if (National_ID.isEmpty()) {
+                showErrorMessage("Please fill in the National ID field.");
+                hasError = true;
+            }
+
+            // Validate contact number
+            if (contactNumber.isEmpty()) {
+                showErrorMessage("Please fill in the Contact Number field.");
+                hasError = true;
+            }
+
+            // Validate email
+            if (Email.isEmpty()) {
+                showErrorMessage("Please fill in the Email field.");
+                hasError = true;
+            }
+
+            // Validate address
+            if (Address.isEmpty()) {
+                showErrorMessage("Please fill in the Address field.");
+                hasError = true;
+            }
 
     
             String Data = "Patient ID: " + patientID + "\n";
@@ -422,7 +479,7 @@ public class Patientdetails extends javax.swing.JFrame {
             }
             
 
-            
+        if (!hasError) {    
          try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Patient Details.txt", true);
             writer.write(Data);
@@ -440,6 +497,7 @@ public class Patientdetails extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
