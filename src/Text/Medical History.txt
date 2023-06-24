@@ -1,5 +1,5 @@
 Patient ID: 0445
-Patient Name: Jonathan Lim
+Patient Name: Jonathan Lew
 Treatment Date: 20/06/2023
 Treatment Time: 25/06/2023
 Treatment Result: Succesful treatment
@@ -9,6 +9,7 @@ Doctor name: Tan Lim Bing
 Nurse name: Kok Wei Mei
 Ward No.: A344
 Additional Notes: Need more care for this patients
+
 
 
 Patient ID: 0446

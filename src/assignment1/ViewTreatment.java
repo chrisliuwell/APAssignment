@@ -62,7 +62,7 @@ public class ViewTreatment extends javax.swing.JFrame {
         jTextArea1.setText("Results will be shown here.....\n\nUsers cant edit here as it is Read Only");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Enter patient ID:");
+        jLabel2.setText("Enter treatment ID:");
 
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class ViewTreatment extends javax.swing.JFrame {
                             .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(99, 99, 99)
                             .addComponent(Submit))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

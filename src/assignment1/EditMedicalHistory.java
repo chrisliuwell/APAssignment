@@ -5,20 +5,26 @@
 package assignment1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author ooiju
+ * New Line of Code Testing Git Hub
  */
-public class ViewMedicine extends javax.swing.JFrame {
+public class EditMedicalHistory extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public ViewMedicine() {
+    public EditMedicalHistory() {
         initComponents();
     }
 
@@ -59,10 +65,10 @@ public class ViewMedicine extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Results will be shown here.....\n\nUsers cant edit here as it is Read Only");
+        jTextArea1.setText("Results will be shown here.....\n\nUsers can edit the info here as this is Read or Write access");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Enter medicine ID:");
+        jLabel2.setText("Enter patient ID:");
 
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +98,10 @@ public class ViewMedicine extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(99, 99, 99)
-                            .addComponent(Submit))))
-                .addContainerGap(105, Short.MAX_VALUE))
+                            .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,36 +110,36 @@ public class ViewMedicine extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit)
                     .addComponent(ReturntoMainMenu))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel3.setToolTipText("");
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("View Medicine");
+        jLabel7.setText("Edit Medical History");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,9 +168,142 @@ public class ViewMedicine extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        String medicineID = jTextField2.getText();
+        String patientID = jTextField2.getText();
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        // TODO add your handling code here:
+        String patientID = jTextField2.getText();
+        boolean patientExist = checkPatientExists(patientID);
+        String editedDetails = jTextArea1.getText();
+
+        if (patientExist) {
+            String patientDetails = getPatientDetails(patientID);
+            jTextArea1.setText(patientDetails);
+
+            // Enable editing of the JTextArea
+            jTextArea1.setEditable(true);
+            jTextArea1.setFocusable(true);
+            jTextArea1.requestFocus();
+
+            if (!patientDetails.equals(editedDetails)) {
+                // Check if the Submit button was clicked
+                if (evt.getSource() == Submit) {
+                    int option = JOptionPane.showOptionDialog(null, "Do you want to save the edited details?", "Save Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                    if (option == JOptionPane.YES_OPTION) {
+                        boolean saveSuccessful = editPatientDetails(patientID, editedDetails);
+
+                        if (saveSuccessful) {
+                            System.out.println("Edited details saved successfully.");
+                            // Update the patient details and display the edited details
+                            patientDetails = editedDetails;
+                            jTextArea1.setText(patientDetails);
+                        } else {
+                            System.out.println("Failed to save the edited details.");
+                        }
+                    }
+                }
+            }
+        } else {
+            System.out.println("Patient ID not found!");
+            jTextArea1.setText("No details found for the given patient ID.");
+        }
+    
+        }
+
+        private boolean checkPatientExists(String patientID) {
+            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    if (line.equals("Patient ID: " + patientID)) {
+                        return true; // Patient ID exists in the text file
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return false; 
+        }
+
+        private String getPatientDetails(String patientID) {
+        StringBuilder details = new StringBuilder();
+            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+                String line;
+                boolean foundPatient = false;
+                while ((line = br.readLine()) != null) {
+                    if (line.equals("Patient ID: " + patientID)) {
+                        foundPatient = true;
+                    } else if (foundPatient) {
+                        if (line.startsWith("Patient ID")) {
+                            break;
+                        }
+                        details.append(line).append("\n");
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return details.toString();
+        }
+
+        private boolean editPatientDetails(String patientID, String newDetails) {
+            try {
+                File inputFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt");
+                File tempFile = new File("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Temp Medical History.txt");
+
+                BufferedReader br = new BufferedReader(new FileReader(inputFile));
+                BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
+
+                String line;
+                boolean patientFound = false;
+                boolean editingDetails = false;
+
+                while ((line = br.readLine()) != null) {
+                    if (line.equals("Patient ID: " + patientID)) {
+                        patientFound = true;
+                        editingDetails = true;
+                        bw.write(line);
+                        bw.newLine();
+                        bw.write(newDetails);
+                        bw.newLine();
+                    } else if (line.startsWith("Patient ID: ")) {
+                        editingDetails = false;
+                    }
+
+                    if (!editingDetails) {
+                        bw.write(line);
+                        bw.newLine();
+                    }
+                }
+
+        br.close();
+        bw.close();
+
+            if (patientFound) {
+                if (!inputFile.delete()) {
+                    System.out.println("Failed to delete the original file.");
+                    return false;
+                }
+
+                if (!tempFile.renameTo(inputFile)) {
+                    System.out.println("Failed to rename the temporary file.");
+                    return false;
+                }
+
+                System.out.println("Patient details updated successfully.");
+                return true;
+            } else {
+                System.out.println("Patient ID not found in the file.");
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }//GEN-LAST:event_SubmitActionPerformed
+       
+            
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
@@ -173,57 +312,6 @@ public class ViewMedicine extends javax.swing.JFrame {
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_ReturntoMainMenuActionPerformed
-
-    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        // TODO add your handling code here:
-        
-        String medicineID = jTextField2.getText();
-    boolean procedureExists = checkProcedureExists(medicineID);
-
-    if (procedureExists) {
-        System.out.println("Medical Procedure found");
-        String procedureDetails = getProcedureDetails(medicineID);
-        jTextArea1.setText("Medical Procedure Record:\n" + procedureDetails);
-    } else {
-        System.out.println("Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
-    }
-    }
-
-    private boolean checkProcedureExists(String medicineID) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.equals("Medicine ID: " + medicineID)) {
-                    return true; // Procedure ID exists in the text file
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false; // Procedure ID not found in the text file
-    }
-
-    private String getProcedureDetails(String medicineID) {
-        StringBuilder details = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
-            String line;
-            boolean foundProcedure = false;
-            while ((line = br.readLine()) != null) {
-                if (line.equals("Medicine ID: " + medicineID)) {
-                    foundProcedure = true;
-                } else if (foundProcedure) {
-                    if (line.startsWith("Medicine ID")) {
-                        break;
-                    }
-                    details.append(line).append("\n");
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return details.toString();
-    }//GEN-LAST:event_SubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,22 +330,14 @@ public class ViewMedicine extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -270,7 +350,7 @@ public class ViewMedicine extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMedicine().setVisible(true);
+                new EditMedicalHistory().setVisible(true);
             }
         });
     }
@@ -287,4 +367,16 @@ public class ViewMedicine extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    private void getText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void updatePatientDetailsInFile(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean checkDetailsSaved(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

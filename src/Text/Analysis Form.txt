@@ -3,7 +3,7 @@ Date: 02/03/2023
 
 Blood Analysis: 
 --------------
-Blood ID : B45
+Blood ID : rrr
 
 Blood Type : AB
 
@@ -68,6 +68,9 @@ Collection Date : 01/03/2023
 Results: 
 --------
 Everything is fine
+
+
+
 
 
 Analysis ID: 66666
@@ -75,7 +78,7 @@ Date: 02/03/2023
 
 Blood Analysis: 
 --------------
-Blood ID : B45
+Blood ID : B69
 
 Blood Type : AB
 
@@ -140,4 +143,5 @@ Collection Date : 01/03/2023
 Results: 
 --------
 Everything is fine
+
 

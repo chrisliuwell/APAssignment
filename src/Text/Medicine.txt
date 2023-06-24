@@ -1,12 +1,14 @@
 Medicine ID: 24435
 Medicine Name: Acetaminophen
-Dousage: 2 
-Instruction: Inject Medicine, then add in the soution
+Dosage: 2 
+Instruction: Inject Medicine, then add in the solution
+
 
 Medicine ID: 24436
 Medicine Name: Paracetamol
-Dousage: 2 
-Instruction: Inject Medicine, then add in the soution
+Dosage: 2 
+Instruction: Inject Medicine, then add in the solution
+
 
 
 

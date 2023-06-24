@@ -1,18 +1,13 @@
-Patient ID: 08873
-Patient Name: Tan Bing Hock
-Gender: Male
-Date Of Birth: 03/05/2001
-Age: 466
-National ID: 017288-05-0223
-Contact Number: 012-5788892
-Email: binghok@gmail.com
-Address: 57 Dtr Keledang Tmn Perindustrian Chandan Raya 31450 Menglembu Menglembu Perak 31450 Malaysia Mengle 
+Patient ID: 00874
+Lorelyn De Leon
+heart rate 50/50
+please provide credible data
 
-Patient Name: Tan Bing Hock
-Gender: Male
-Date Of Birth: 03/05/2001
-Age: 24
-National ID: 017288-05-0223
-Contact Number: 012-5788892
-Email: binghok@gmail.com
-Address: 57 Dtr Keledang Tmn Perindustrian Chandan Raya 31450 Menglembu Menglembu Perak 31450 Malaysia Mengle 
+Patient ID: 00873
+Hrishikeshh ramarau 
+50/50 10
+coo
+
+
+
+lorelyn
