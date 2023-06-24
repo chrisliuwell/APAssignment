@@ -341,7 +341,11 @@ public class AnalysisForm extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         userInput1 = jTextField1.getText();
     }//GEN-LAST:event_jTextField1ActionPerformed
-
+    
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
             jTextField1ActionPerformed(evt);
             jTextField1ActionPerformed(evt);
@@ -355,8 +359,17 @@ public class AnalysisForm extends javax.swing.JFrame {
             String tumourAnalysis = jTextArea7.getText();
             String tumourDescription = jTextArea8.getText();
             
+            boolean hasError = false;
 
-
+            if (userInput1.isEmpty()) {
+                showErrorMessage("Please fill in the Analysis ID field.");
+                hasError = true;
+            }
+            
+            if (userInput2.isEmpty()) {
+                showErrorMessage("Please fill in the Date field.");
+                hasError = true;
+            }
 
             String Data = "Analysis ID: " + userInput1 + "\n";
             String Data2 = "Date: " + userInput2 + "\n" + "\n";
@@ -368,24 +381,25 @@ public class AnalysisForm extends javax.swing.JFrame {
             String Data8 = "Results: " + "\n" + "--------" + "\n" + sputumDescription + "\n\n\n\n";
             String Data9 = "Tumour Analysis: " + "\n" + "---------------" + "\n" + tumourAnalysis + "\n";
             String Data10 = "Results: " + "\n" + "--------" + "\n" + tumourDescription + "\n\n\n\n";
-          
-           try {
-            FileWriter writer = new FileWriter("../APAssignment/src/Text/Analysis Form.txt", true);
-            writer.write(Data);
-            writer.write(Data2);
-            writer.write(Data3);
-            writer.write(Data4);
-            writer.write(Data5);
-            writer.write(Data6);
-            writer.write(Data7);
-            writer.write(Data8);   
-            writer.write(Data9);
-            writer.write(Data10);
-            writer.write("\n");                
-            writer.close();
-            JOptionPane.showMessageDialog(this, "Success");
-        } catch (IOException e) {
-            System.out.println("An error occurred while saving the data: " + e.getMessage());
+        if (!hasError) {  
+            try {
+             FileWriter writer = new FileWriter("../APAssignment/src/Text/Analysis Form.txt", true);
+             writer.write(Data);
+             writer.write(Data2);
+             writer.write(Data3);
+             writer.write(Data4);
+             writer.write(Data5);
+             writer.write(Data6);
+             writer.write(Data7);
+             writer.write(Data8);   
+             writer.write(Data9);
+             writer.write(Data10);
+             writer.write("\n");                
+             writer.close();
+             JOptionPane.showMessageDialog(this, "Success");
+         } catch (IOException e) {
+             System.out.println("An error occurred while saving the data: " + e.getMessage());
+         }
         }
     }//GEN-LAST:event_SubmitActionPerformed
 

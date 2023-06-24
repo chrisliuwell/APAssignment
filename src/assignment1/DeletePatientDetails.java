@@ -188,10 +188,10 @@ public class DeletePatientDetails extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Patient with ID " + patientID + "deleted successfully");
         } else if (found && deletedLines == 0) {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Only the patient with ID " + patientID + "was found, but no additional lines were deleted");
+            JOptionPane.showMessageDialog(this, "Only the patient with ID " + patientID + "was found, but no additional lines were deleted", "Error" ,JOptionPane.ERROR_MESSAGE);
         } else {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Patient with ID " + patientID + "not found");
+            JOptionPane.showMessageDialog(this, "Patient with ID " + patientID + "not found", "Error" ,JOptionPane.ERROR_MESSAGE);
         }
 
     } catch (IOException e) {

@@ -188,10 +188,10 @@ public class DeleteMedicine extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Medicine with ID " + medicineID + "deleted succesfully.");
         } else if (found && deletedLines == 0) {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Only the medicine with ID " + medicineID + " was found, but no additional lines were deleted.");
+            JOptionPane.showMessageDialog(this, "Only the medicine with ID " + medicineID + " was found, but no additional lines were deleted.", "Error" ,JOptionPane.ERROR_MESSAGE);
         } else {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Medicine with ID " + medicineID + "not found.");
+            JOptionPane.showMessageDialog(this, "Medicine with ID " + medicineID + "not found.", "Error" ,JOptionPane.ERROR_MESSAGE);
         }
 
     } catch (IOException e) {

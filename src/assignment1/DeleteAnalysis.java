@@ -191,10 +191,10 @@ public class DeleteAnalysis extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Analysis with ID " + analysisId + " deleted sucessfully.");
         } else if (found && deletedLines == 0) {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Only the analysis with ID " + analysisId + " was found, but no additional lines were deleted.");
+            JOptionPane.showMessageDialog(this, "Only the analysis with ID " + analysisId + " was found, but no additional lines were deleted.", "Error" ,JOptionPane.ERROR_MESSAGE);
         } else {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Analysis with ID " + analysisId + " not found.");
+            JOptionPane.showMessageDialog(this, "Analysis with ID " + analysisId + " not found.", "Error" ,JOptionPane.ERROR_MESSAGE);
         }
 
     } catch (IOException e) {

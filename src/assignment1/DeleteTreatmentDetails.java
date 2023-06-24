@@ -191,10 +191,10 @@ public class DeleteTreatmentDetails extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Treatment with ID " + treatmentID + " deleted successfully.");
         } else if (found && deletedLines == 0) {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Only the Treatment with ID " + treatmentID + " was found, but no additional lines were deleted.");
+            JOptionPane.showMessageDialog(this, "Only the Treatment with ID " + treatmentID + " was found, but no additional lines were deleted.", "Error" ,JOptionPane.ERROR_MESSAGE);
         } else {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Treatment with ID " + treatmentID + " not found.");
+            JOptionPane.showMessageDialog(this, "Treatment with ID " + treatmentID + " not found.", "Error" ,JOptionPane.ERROR_MESSAGE);
         }
 
     } catch (IOException e) {

@@ -188,10 +188,10 @@ public class DeleteProcedure extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Procedure with ID " + procedureID + " deleted successfully.");
         } else if (found && deletedLines == 0) {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this,"Only the procedure with ID " + procedureID + "was found, but no additional lines were deleted");
+            JOptionPane.showMessageDialog(this,"Only the procedure with ID " + procedureID + "was found, but no additional lines were deleted", "Error" ,JOptionPane.ERROR_MESSAGE);
         } else {
             outputFile.delete(); // Delete the temporary file
-            JOptionPane.showMessageDialog(this, "Procedure with ID " + procedureID + "not found");
+            JOptionPane.showMessageDialog(this, "Procedure with ID " + procedureID + "not found", "Error" ,JOptionPane.ERROR_MESSAGE);
         }
 
     } catch (IOException e) {

@@ -214,20 +214,47 @@ public class Medicine extends javax.swing.JFrame {
     private void jTextField29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29ActionPerformed
         userInput1 = jTextField29.getText();
     }//GEN-LAST:event_jTextField29ActionPerformed
-
+    
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             jTextField23ActionPerformed(evt);
             jTextField24ActionPerformed(evt);
             jTextField29ActionPerformed(evt);
             jTextField25ActionPerformed(evt);
+            
+            boolean hasError = false;    
+            
+            if (userInput1.isEmpty()) {
+                showErrorMessage("Please fill in the Medicine ID field.");
+                hasError = true;
+            }  
 
+
+            if (userInput2.isEmpty()) {
+                showErrorMessage("Please fill in the Medicine Name field.");
+                hasError = true;
+            }
+
+
+            if (userInput3.isEmpty()) {
+                showErrorMessage("Please fill in the Dosage field.");
+                hasError = true;
+            }   
+
+             if (userInput4.isEmpty()) {
+                showErrorMessage("Please fill in the Instruction ID field.");
+                hasError = true;
+            }
 
             String Data = "Medicine ID: " + userInput1 + "\n";
             String Data2 = "Medicine Name: " + userInput2 + "\n";
             String Data3 = "Dousage: " + userInput3 + "\n";
             String Data4 = "Instruction: "+ userInput4 + "\n";
 
-
+        if (!hasError){
            try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Medicine.txt", true);
             writer.write(Data);
@@ -240,6 +267,7 @@ public class Medicine extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25ActionPerformed

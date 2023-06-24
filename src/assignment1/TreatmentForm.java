@@ -250,7 +250,6 @@ public class TreatmentForm extends javax.swing.JFrame {
     
         if (active) {
             System.out.println("Active");
-
         }
     }//GEN-LAST:event_ActiveActionPerformed
 
@@ -261,14 +260,39 @@ public class TreatmentForm extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         userInput3 = jTextField6.getText();
     }//GEN-LAST:event_jTextField6ActionPerformed
-
+    private void showErrorMessage(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         
             jTextField1ActionPerformed(evt);
             jTextField4ActionPerformed(evt);
             jTextField5ActionPerformed(evt);
             jTextField6ActionPerformed(evt);
+            
+            boolean hasError = false;
 
+            if (userInput1.isEmpty()) {
+                showErrorMessage("Please fill in the Treatment ID field.");
+                hasError = true;
+            }  
+        
+            if (userInput2.isEmpty()) {
+                showErrorMessage("Please fill in the Date Start field.");
+                hasError = true;
+            }
+
+
+            if (userInput3.isEmpty()) {
+                showErrorMessage("Please fill in the Date End field.");
+                hasError = true;
+            }   
+
+             if (userInput4.isEmpty()) {
+                showErrorMessage("Please fill in the Duration field.");
+                hasError = true;
+            }
 
             String Data = "Treatment ID: " + userInput1 + "\n";
             String Data2 = "Date Start: " + userInput2 + "\n";
@@ -283,7 +307,7 @@ public class TreatmentForm extends javax.swing.JFrame {
             }
 
 
-
+        if(!hasError){
            try {
             FileWriter writer = new FileWriter("../APAssignment/src/Text/Treatment Details.txt", true);
             writer.write(Data);
@@ -297,6 +321,7 @@ public class TreatmentForm extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data: " + e.getMessage());
         }
+      }
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void ReturntoMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturntoMainMenuActionPerformed
