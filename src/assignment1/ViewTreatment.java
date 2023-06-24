@@ -176,55 +176,54 @@ public class ViewTreatment extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        
         String treatmentID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(treatmentID);
+        boolean patientExist = checkPatientExists(treatmentID);
 
-    if (patientExist) {
-        System.out.println("Medical Procedure found");
-        String patientDetails = getPatientDetails(treatmentID);
-        jTextArea1.setText("Medical Procedure Record:\n" + patientDetails);
-        
-    } else {
-        System.out.println("Patient Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
-    }
+        if (patientExist) {
+            System.out.println("Medical Treatment found");
+            String patientDetails = getPatientDetails(treatmentID);
+            jTextArea1.setText(patientDetails);
+
+        } else {
+            System.out.println("Patient Treatment ID not found!");
+            jTextArea1.setText("No details found for the given treatment ID.");
+        }
     }
 
     private boolean checkPatientExists(String treatmentID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Treatment Details.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Treatment ID: " + treatmentID)) {
-                return true; // Procedure ID exists in the text file
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Treatment Details.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Treatment ID: " + treatmentID)) {
+                    return true; //Tr id exist in the text files
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return false; // Procedure ID not found in the text file
+        return false; // Treatment ID not found in the text file
     }
 
     private String getPatientDetails(String treatmentID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Treatment Details.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Treatment ID: " + treatmentID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Treatment ID")) {
-                    break;
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Treatment Details.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Treatment ID: " + treatmentID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    if (line.startsWith("Treatment ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
                 }
-                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return details.toString();
+        return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**

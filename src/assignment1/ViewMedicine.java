@@ -178,34 +178,34 @@ public class ViewMedicine extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String medicineID = jTextField2.getText();
-    boolean procedureExists = checkProcedureExists(medicineID);
+        boolean medicineExists = checkMedicineExists(medicineID);
 
-    if (procedureExists) {
-        System.out.println("Medical Procedure found");
-        String procedureDetails = getProcedureDetails(medicineID);
-        jTextArea1.setText("Medical Procedure Record:\n" + procedureDetails);
-    } else {
-        System.out.println("Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
-    }
+        if (medicineExists) {
+            System.out.println("Medicine record found");
+            String medicineDetails = getMedicineDetails(medicineID);
+            jTextArea1.setText(medicineDetails);
+        } else {
+            System.out.println("Medicine ID not found!");
+            jTextArea1.setText("No details found for the given medicine ID.");
+        }
     }
 
-    private boolean checkProcedureExists(String medicineID) {
+    private boolean checkMedicineExists(String medicineID) {
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.equals("Medicine ID: " + medicineID)) {
-                    return true; // Procedure ID exists in the text file
+                    return true; // med ID exists in the text file
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false; // Procedure ID not found in the text file
+        return false; 
     }
 
-    private String getProcedureDetails(String medicineID) {
-        StringBuilder details = new StringBuilder();
+    private String getMedicineDetails(String medicineID) {
+    StringBuilder details = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
             String line;
             boolean foundProcedure = false;

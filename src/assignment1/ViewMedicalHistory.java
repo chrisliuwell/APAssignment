@@ -178,54 +178,54 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String patientID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(patientID);
+        boolean patientExist = checkPatientExists(patientID);
 
-    if (patientExist) {
-        System.out.println("Medical History found");
-        String patientDetails = getPatientDetails(patientID);
-        jTextArea1.setText("Medical History Record:\n" + patientDetails);
-        
-        
-    } else {
-        System.out.println("Patient ID not found!");
-        jTextArea1.setText("No details found for the given patient ID.");
-    }
+        if (patientExist) {
+            System.out.println("Medical History found");
+            String patientDetails = getPatientDetails(patientID);
+            jTextArea1.setText("Medical History Record:\n" + patientDetails);
+
+
+        } else {
+            System.out.println("Patient ID not found!");
+            jTextArea1.setText("No details found for the given patient ID.");
+        }
     }
 
     private boolean checkPatientExists(String patientID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                return true; // Patient ID exists in the text file
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Patient ID: " + patientID)) {
+                    return true; // Patient ID exists in the text file
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return false; // Patient ID not found in the text file
+        return false; // Patient ID not found in the text file
     }
 
     private String getPatientDetails(String patientID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + patientID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Patient ID")) {
-                    break;
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medical History.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Patient ID: " + patientID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    if (line.startsWith("Patient ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
                 }
-                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return details.toString();
+        return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**

@@ -62,7 +62,7 @@ public class ViewProcedure extends javax.swing.JFrame {
         jTextArea1.setText("Results will be shown here.....\n\nUsers cant edit here as it is Read Only");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Enter patient ID:");
+        jLabel2.setText("Enter procedure ID:");
 
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class ViewProcedure extends javax.swing.JFrame {
                             .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(99, 99, 99)
                             .addComponent(Submit))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,53 +178,53 @@ public class ViewProcedure extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String procedureID = jTextField2.getText();
-    boolean patientExist = checkPatientExists(procedureID);
+        boolean patientExist = checkPatientExists(procedureID);
 
-    if (patientExist) {
-        System.out.println("Treatment details found!");
-        String patientDetails = getPatientDetails(procedureID);
-        jTextArea1.setText("Medical Treatment Record:\n" + patientDetails);
-        
-    } else {
-        System.out.println("Patient Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
-    }
+        if (patientExist) {
+            System.out.println("Treatment details found!");
+            String patientDetails = getPatientDetails(procedureID);
+            jTextArea1.setText(patientDetails);
+
+        } else {
+            System.out.println("Patient Procedure ID not found!");
+            jTextArea1.setText("No details found for the given procedure ID.");
+        }
     }
 
     private boolean checkPatientExists(String procedureID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Procedure ID: " + procedureID)) {
-                return true; // Procedure ID exists in the text file
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Procedure ID: " + procedureID)) {
+                    return true; // Procedure ID exists in the text file
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return false; // Procedure ID not found in the text file
+        return false; // Procedure ID not found in the text file
     }
 
     private String getPatientDetails(String procedureID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Procedure ID: " + procedureID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Procedure ID")) {
-                    break;
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Procedure ID: " + procedureID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    if (line.startsWith("Procedure ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
                 }
-                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return details.toString();
+        return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**

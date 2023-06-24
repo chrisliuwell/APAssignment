@@ -172,7 +172,6 @@ public class EditProcedure extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        // TODO add your handling code here:
         String procedureID = jTextField2.getText();
         boolean patientExist = checkPatientExists(procedureID);
         String editedDetails = jTextArea1.getText();
@@ -205,12 +204,10 @@ public class EditProcedure extends javax.swing.JFrame {
                 }
             }
         } else {
-            System.out.println("Procedure ID not found!");
-            jTextArea1.setText("No details found for the given Procedure ID.");
+            System.out.println("procedure ID not found!");
+            jTextArea1.setText("No details found for the given procedure ID.");
         }
-    
-        }
-
+    }
         private boolean checkPatientExists(String procedureID) {
             try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
                 String line;
@@ -227,7 +224,7 @@ public class EditProcedure extends javax.swing.JFrame {
 
         private String getPatientDetails(String procedureID) {
         StringBuilder details = new StringBuilder();
-            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
+           try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Procedure Form.txt"))) {
                 String line;
                 boolean foundPatient = false;
                 while ((line = br.readLine()) != null) {
@@ -385,6 +382,10 @@ public class EditProcedure extends javax.swing.JFrame {
     }
 
     private boolean checkDetailsSaved(String patientID, String editedDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean procedureIDHasBeenCalledBefore(String procedureID) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

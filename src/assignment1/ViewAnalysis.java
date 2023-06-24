@@ -62,7 +62,7 @@ public class ViewAnalysis extends javax.swing.JFrame {
         jTextArea1.setText("Results will be shown here.....\n\nUsers cant edit here as it is Read Only");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Enter patient ID:");
+        jLabel2.setText("Enter analysis ID:");
 
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class ViewAnalysis extends javax.swing.JFrame {
                             .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(99, 99, 99)
                             .addComponent(Submit))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,14 +176,13 @@ public class ViewAnalysis extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        
         String analysisID = jTextField2.getText();
         boolean patientExist = checkPatientExists(analysisID);
 
         if (patientExist) {
             System.out.println("Print Analysis Record:");
             String patientDetails = getPatientDetails(analysisID);
-            jTextArea1.setText("Medical Analysis Record:\n" + patientDetails);
+            jTextArea1.setText(patientDetails);
 
         } else {
             System.out.println("Patient Analysis ID not found!");
@@ -192,39 +191,39 @@ public class ViewAnalysis extends javax.swing.JFrame {
     }
 
     private boolean checkPatientExists(String analysisID) {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Analysis ID: " + analysisID)) {
-                return true; // Patient ID exists in the text file
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Analysis ID: " + analysisID)) {
+                    return true; // Patient ID exists in the text file
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return false; // Patient ID not found in the text file
+        return false; // Patient ID not found in the text file
     }
 
     private String getPatientDetails(String analysisID) {
     StringBuilder details = new StringBuilder();
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
-        String line;
-        boolean foundPatient = false;
-        while ((line = br.readLine()) != null) {
-            if (line.equals("Analysis ID: " + analysisID)) {
-                foundPatient = true;
-            } else if (foundPatient) {
-                if (line.startsWith("Analysis ID")) {
-                    break;
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Analysis Form.txt"))) {
+            String line;
+            boolean foundPatient = false;
+            while ((line = br.readLine()) != null) {
+                if (line.equals("Analysis ID: " + analysisID)) {
+                    foundPatient = true;
+                } else if (foundPatient) {
+                    if (line.startsWith("Analysis ID")) {
+                        break;
+                    }
+                    details.append(line).append("\n");
                 }
-                details.append(line).append("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return details.toString();
+        return details.toString();
     }//GEN-LAST:event_SubmitActionPerformed
 
     /**
