@@ -19,12 +19,12 @@ import javax.swing.JOptionPane;
  * @author ooiju
  * New Line of Code Testing Git Hub
  */
-public class EditForm extends javax.swing.JFrame {
+public class EditMedicalHistory extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public EditForm() {
+    public EditMedicalHistory() {
         initComponents();
     }
 
@@ -88,8 +88,8 @@ public class EditForm extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +101,7 @@ public class EditForm extends javax.swing.JFrame {
                             .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(140, 140, 140))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,23 +123,23 @@ public class EditForm extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("Edit Patient");
+        jLabel7.setText("Edit Medical History");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,7 +212,7 @@ public class EditForm extends javax.swing.JFrame {
         }
 
         private boolean checkPatientExists(String patientID) {
-            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Medical History.txt"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     if (line.equals("Patient ID: " + patientID)) {
@@ -227,7 +227,7 @@ public class EditForm extends javax.swing.JFrame {
 
         private String getPatientDetails(String patientID) {
         StringBuilder details = new StringBuilder();
-            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Medical History.txt"))) {
                 String line;
                 boolean foundPatient = false;
                 while ((line = br.readLine()) != null) {
@@ -248,8 +248,8 @@ public class EditForm extends javax.swing.JFrame {
 
         private boolean editPatientDetails(String patientID, String newDetails) {
             try {
-                File inputFile = new File("../APAssignment/src/Text/Patient Details.txt");
-                File tempFile = new File("../APAssignment/src/Text/Temp Patient Details.txt");
+                File inputFile = new File("../APAssignment/src/Text/Medical History.txt");
+                File tempFile = new File("../APAssignment/src/Text/Temp Medical History.txt");
 
                 BufferedReader br = new BufferedReader(new FileReader(inputFile));
                 BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
@@ -330,13 +330,13 @@ public class EditForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicalHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -358,7 +358,7 @@ public class EditForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditForm().setVisible(true);
+                new EditMedicalHistory().setVisible(true);
             }
         });
     }

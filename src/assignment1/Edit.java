@@ -406,7 +406,7 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_PatientMouseClicked
 
     private void ProcedureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProcedureMouseClicked
-        EditForm e = new EditForm();
+        EditProcedure e = new EditProcedure();
         e.setVisible(true);
         e.pack();
         e.setLocationRelativeTo(null);
@@ -415,7 +415,7 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_ProcedureMouseClicked
 
     private void TreatmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreatmentMouseClicked
-        EditForm e = new EditForm();
+        EditTreatmentDetails e = new EditTreatmentDetails();
         e.setVisible(true);
         e.pack();
         e.setLocationRelativeTo(null);
@@ -424,7 +424,7 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_TreatmentMouseClicked
 
     private void MedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicineMouseClicked
-        EditForm e = new EditForm();
+        EditMedicine e = new EditMedicine();
         e.setVisible(true);
         e.pack();
         e.setLocationRelativeTo(null);
@@ -442,7 +442,7 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnMainMenuMouseClicked
 
     private void MedicalHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicalHistoryMouseClicked
-        EditForm e = new EditForm();
+        EditMedicalHistory e = new EditMedicalHistory();
         e.setVisible(true);
         e.pack();
         e.setLocationRelativeTo(null);
@@ -451,7 +451,7 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_MedicalHistoryMouseClicked
 
     private void AnalysisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalysisMouseClicked
-        EditForm e = new EditForm();
+        EditAnalysis e = new EditAnalysis();
         e.setVisible(true);
         e.pack();
         e.setLocationRelativeTo(null);

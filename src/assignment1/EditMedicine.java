@@ -19,12 +19,12 @@ import javax.swing.JOptionPane;
  * @author ooiju
  * New Line of Code Testing Git Hub
  */
-public class EditForm extends javax.swing.JFrame {
+public class EditMedicine extends javax.swing.JFrame {
 
     /**
      * Creates new form TreatmentForm
      */
-    public EditForm() {
+    public EditMedicine() {
         initComponents();
     }
 
@@ -68,7 +68,7 @@ public class EditForm extends javax.swing.JFrame {
         jTextArea1.setText("Results will be shown here.....\n\nUsers can edit the info here as this is Read or Write access");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Enter patient ID:");
+        jLabel2.setText("Enter medicine  ID:");
 
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -91,17 +91,16 @@ public class EditForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                        .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ReturntoMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,23 +122,23 @@ public class EditForm extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(187, 187, 187));
         jLabel7.setFont(new java.awt.Font("Sitka Subheading", 1, 48)); // NOI18N
-        jLabel7.setText("Edit Patient");
+        jLabel7.setText("Edit Medicine");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(103, 103, 103))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -168,17 +167,17 @@ public class EditForm extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        String patientID = jTextField2.getText();
+        String medicineID = jTextField2.getText();
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        String patientID = jTextField2.getText();
-        boolean patientExist = checkPatientExists(patientID);
+        String medicineID = jTextField2.getText();
+        boolean patientExist = checkPatientExists(medicineID);
         String editedDetails = jTextArea1.getText();
 
         if (patientExist) {
-            String patientDetails = getPatientDetails(patientID);
+            String patientDetails = getPatientDetails(medicineID);
             jTextArea1.setText(patientDetails);
 
             // Enable editing of the JTextArea
@@ -191,7 +190,7 @@ public class EditForm extends javax.swing.JFrame {
                 if (evt.getSource() == Submit) {
                     int option = JOptionPane.showOptionDialog(null, "Do you want to save the edited details?", "Save Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
                     if (option == JOptionPane.YES_OPTION) {
-                        boolean saveSuccessful = editPatientDetails(patientID, editedDetails);
+                        boolean saveSuccessful = editPatientDetails(medicineID, editedDetails);
 
                         if (saveSuccessful) {
                             System.out.println("Edited details saved successfully.");
@@ -205,17 +204,17 @@ public class EditForm extends javax.swing.JFrame {
                 }
             }
         } else {
-            System.out.println("Patient ID not found!");
-            jTextArea1.setText("No details found for the given patient ID.");
+            System.out.println("medicine ID not found!");
+            jTextArea1.setText("No details found for the given medicine ID.");
         }
     
         }
 
-        private boolean checkPatientExists(String patientID) {
-            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+        private boolean checkPatientExists(String medicineID) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Medicine.txt"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                    if (line.equals("Patient ID: " + patientID)) {
+                    if (line.equals("Medicine ID: " + medicineID)) {
                         return true; // Patient ID exists in the text file
                     }
                 }
@@ -225,16 +224,16 @@ public class EditForm extends javax.swing.JFrame {
             return false; 
         }
 
-        private String getPatientDetails(String patientID) {
+        private String getPatientDetails(String medicineID) {
         StringBuilder details = new StringBuilder();
-            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Patient Details.txt"))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../APAssignment/src/Text/Medicine.txt"))) {
                 String line;
                 boolean foundPatient = false;
                 while ((line = br.readLine()) != null) {
-                    if (line.equals("Patient ID: " + patientID)) {
+                    if (line.equals("Medicine ID: " + medicineID)) {
                         foundPatient = true;
                     } else if (foundPatient) {
-                        if (line.startsWith("Patient ID")) {
+                        if (line.startsWith("Medicine ID")) {
                             break;
                         }
                         details.append(line).append("\n");
@@ -246,10 +245,10 @@ public class EditForm extends javax.swing.JFrame {
             return details.toString();
         }
 
-        private boolean editPatientDetails(String patientID, String newDetails) {
+        private boolean editPatientDetails(String medicineID, String newDetails) {
             try {
-                File inputFile = new File("../APAssignment/src/Text/Patient Details.txt");
-                File tempFile = new File("../APAssignment/src/Text/Temp Patient Details.txt");
+                File inputFile = new File("../APAssignment/src/Text/Medicine.txt");
+                File tempFile = new File("../APAssignment/src/Text/Temp Medicine.txt");
 
                 BufferedReader br = new BufferedReader(new FileReader(inputFile));
                 BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
@@ -259,14 +258,14 @@ public class EditForm extends javax.swing.JFrame {
                 boolean editingDetails = false;
 
                 while ((line = br.readLine()) != null) {
-                    if (line.equals("Patient ID: " + patientID)) {
+                    if (line.equals("Medicine ID: " + medicineID)) {
                         patientFound = true;
                         editingDetails = true;
                         bw.write(line);
                         bw.newLine();
                         bw.write(newDetails);
                         bw.newLine();
-                    } else if (line.startsWith("Patient ID: ")) {
+                    } else if (line.startsWith("Medicine ID: ")) {
                         editingDetails = false;
                     }
 
@@ -290,10 +289,10 @@ public class EditForm extends javax.swing.JFrame {
                     return false;
                 }
 
-                System.out.println("Patient details updated successfully.");
+                System.out.println("medicine details updated successfully.");
                 return true;
             } else {
-                System.out.println("Patient ID not found in the file.");
+                System.out.println("medicine ID not found in the file.");
                 return false;
             }
         } catch (IOException e) {
@@ -330,14 +329,30 @@ public class EditForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMedicine.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -358,7 +373,7 @@ public class EditForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditForm().setVisible(true);
+                new EditMedicine().setVisible(true);
             }
         });
     }
