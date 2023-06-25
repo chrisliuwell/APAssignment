@@ -1,3 +1,4 @@
+Analysis ID: A4523
 Date: 02/03/2023
 
 Blood Analysis: 
@@ -6,9 +7,9 @@ Blood ID : B45
 
 Blood Type : AB
 
-Glucose Level : 25% 
+Glucose Level : 75mg/dL
 
-Electrolytes Volume : 70%
+Electrolytes Volume : Normal
 
 Collection Date : 01/03/2023
 
@@ -27,7 +28,7 @@ Colour : Yellowish
 
 Transparency Level : 2
 
-Density : 20%
+Density : Normal 
 
 Collection Date : 01/03/2023
 
@@ -44,7 +45,7 @@ Sputum ID : S45
 
 Density : 23%
 
-Volume : 25%
+Volume : Adequate
 
 Collection Date : 01/03/2023
 
@@ -68,72 +69,227 @@ Results:
 --------
 Everything is fine
 
+
+
+
+Analysis ID: A4768
+Date: 25/05/2023
 
 Blood Analysis: 
 --------------
-Blood ID : B45
+Blood ID : B47
 
-Blood Type : AB
+Blood Type : A-
 
-Glucose Level : 25% 
+Glucose Level : 85 mg/dL
 
-Electrolytes Volume : 70%
+Electrolytes Volume : Normal
 
-Collection Date : 01/03/2023
+Collection Date : 24/05/2023
 
 
 Results: 
 --------
-Everything is fine
+All values fall within the normal range
 
 
 
 Urine Analysis: 
 --------------
-Urine ID : U45
+Urine ID : U47
 
-Colour : Yellowish
+Colour : Light yellow
 
-Transparency Level : 2
+Transparency Level : Slightly cloudy
 
-Density : 20%
+Density : 1.020 g/mL
 
-Collection Date : 01/03/2023
+Collection Date : 24/05/2023
 
 
 Results: 
 --------
-Everything is fine
+No abnormal findings detected
 
 
 
 Sputum Analysis: 
 ---------------
-Sputum ID : S45
+Sputum ID : S47
 
-Density : 23%
+Density : Moderate
 
-Volume : 25%
+Volume : Adequate
 
-Collection Date : 01/03/2023
+Collection Date : 24/05/2023
 
 
 Results: 
 --------
-Everything is fine
+No significant abnormalities observed
 
 
 
 Tumour Analysis: 
 ---------------
-Tumour ID : T45
+Tumour ID : T47
 
-Size : 0.5cm
+Size : 1.2 cm
 
-Collection Date : 01/03/2023
+Collection Date : 24/05/2023
 
 
 Results: 
 --------
-Everything is fine
+Benign tumor, no signs of malignancy
+
+
+
+
+Analysis ID: A4875
+Date: 15/07/2023
+
+Blood Analysis: 
+--------------
+Blood ID: B48
+
+Blood Type: B+
+
+Glucose Level: 110 mg/dL
+
+Electrolytes Volume: Normal
+
+Collection Date: 14/07/2023
+
+
+Results: 
+--------
+Glucose level slightly elevated, but overall within acceptable range
+
+
+
+Urine Analysis: 
+--------------
+Urine ID: U48
+
+Colour: Amber
+
+Transparency Level: Clear
+
+Density: 1.025 g/mL
+
+Collection Date: 14/07/2023
+
+
+Results: 
+--------
+No abnormalities detected
+
+
+
+Sputum Analysis: 
+---------------
+Sputum ID: S48
+
+Density: Moderate
+
+Volume: Adequate
+
+Collection Date: 14/07/2023
+
+
+Results: 
+--------
+No significant findings observed
+
+
+
+Tumour Analysis: 
+---------------
+Tumour ID: T48
+
+Size: 0.8 cm
+
+Collection Date: 14/07/2023
+
+
+Results: 
+--------
+Benign tumor, no signs of malignancy
+
+
+
+
+Analysis ID: A4906
+Date: 30/09/2023
+
+Blood Analysis: 
+--------------
+Blood ID: B49
+
+Blood Type: A+
+
+Glucose Level: 90 mg/dL
+
+Electrolytes Volume: Normal
+
+Collection Date: 29/09/2023
+
+
+Results: 
+--------
+All values fall within normal range
+
+
+
+Urine Analysis: 
+--------------
+Urine ID: U49
+
+Colour: Straw yellow
+
+Transparency Level: Clear
+
+Density: 1.010 g/mL
+
+Collection Date: 29/09/2023
+
+
+Results: 
+--------
+No abnormalities detected
+
+
+
+Sputum Analysis: 
+---------------
+Sputum ID : S68
+
+Density : 20%
+
+Volume : 15 mL
+
+Collection Date : 14/04/2023
+
+Results: 
+--------
+No abnormalities detected
+
+
+
+Tumour Analysis: 
+---------------
+Tumour ID : T68
+
+Size : 1.8 cm
+
+Collection Date : 14/04/2023
+
+
+Results: 
+--------
+No abnormalities detected
+
+
+
 

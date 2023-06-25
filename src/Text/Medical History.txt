@@ -1,7 +1,7 @@
-Patient ID: 0445
-Patient Name: Jonathan Lim
+Patient ID: 08873
+Patient Name: Tan Bing Hock
 Treatment Date: 20/06/2023
-Treatment Time: 25/06/2023
+Treatment Time: 10:00 AM
 Treatment Result: Succesful treatment
 Observation: Scar recovered gradually
 Major complications: Minor urinary retention
@@ -10,15 +10,50 @@ Nurse name: Kok Wei Mei
 Ward No.: A344
 Additional Notes: Need more care for this patients
 
+Patient ID: 01232
+Patient Name: Emily Chen
+Treatment Date: 05/07/2023
+Treatment Time: 09:30 AM
+Treatment Result: Successful treatment
+Observation: Rapid improvement in symptoms
+Major Complications: None
+Doctor Name: Lee Mei Ling
+Nurse Name: Wong Mei Ying
+Ward No.: B202
+Additional Notes: Patient discharged with medication and follow-up appointment scheduled.
 
-Patient ID: 0446
-Patient Name: Lorelyn De Leon
-Treatment Date: 20/06/2023
-Treatment Time: 25/06/2023
-Treatment Result: Succesful treatment
-Observation: Scar recovered gradually
-Major complications: Minor urinary retention
-Doctor name: Tan Lim Bing
-Nurse name: Kok Wei Mei
-Ward No.: A344
-Additional Notes: Need more care for this patients
+Patient ID: 02345
+Patient Name: Michael Johnson
+Treatment Date: 15/08/2023
+Treatment Time: 02:00 PM
+Treatment Result: Successful treatment
+Observation: Minimal side effects observed
+Major Complications: None
+Doctor Name: Sarah Tan
+Nurse Name: Lim Ah Leng
+Ward No.: C105
+Additional Notes: Patient advised to continue medication and scheduled for a check-up in two weeks.
+
+Patient ID: 03781
+Patient Name: Jennifer Lee
+Treatment Date: 10/09/2023
+Treatment Time: 11:30 AM
+Treatment Result: Successful treatment
+Observation: Gradual improvement in mobility
+Major Complications: None
+Doctor Name: Lim Wei Jie
+Nurse Name: Ng Kim Li
+Ward No.: D412
+Additional Notes: Patient to undergo physiotherapy for continued rehabilitation.
+
+Patient ID: 05903
+Patient Name: Benjamin Tan
+Treatment Date: 20/11/2023
+Treatment Time: 03:45 PM
+Treatment Result: Successful treatment
+Observation: Stable vital signs throughout the procedure
+Major Complications: None
+Doctor Name: Chong Mei Ling
+Nurse Name: Tan Wei Heng
+Ward No.: E212
+Additional Notes: Patient discharged with post-treatment instructions and follow-up scheduled in one month.

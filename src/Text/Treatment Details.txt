@@ -1,1 +1,44 @@
+Treatment ID: T3992
+Date Start: 20/05/2023
+Date End: 31/05/2023
+Duration: 12 days
+Status: Active
+
+Treatment ID: T3996
+Date Start: 20/05/2023
+Date End: 30/05/2023
+Duration: 11 days
+Status: Non-Active
+
+Treatment ID: T0123
+Date Start: 05/02/2023
+Date End: 15/02/2023
+Duration: 10 days
+Status: Active
+
+Treatment ID: T0876
+Date Start: 12/07/2023
+Date End: 25/07/2023
+Duration: 14 days
+Status: Non-Active
+
+Treatment ID: T1543
+Date Start: 03/09/2023
+Date End: 09/09/2023
+Duration: 7 days
+Status: Active
+
+Treatment ID: T2098
+Date Start: 17/11/2023
+Date End: 28/11/2023
+Duration: 12 days
+Status: Active
+
+Treatment ID: T2765
+Date Start: 08/12/2023
+Date End: 14/12/2023
+Duration: 7 days
+Status: Active
+
+
 

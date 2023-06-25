@@ -1,12 +1,24 @@
-Medicine ID: 24435
+Medicine ID: M4435
 Medicine Name: Acetaminophen
-Dousage: 2 
-Instruction: Inject Medicine, then add in the solution
+Dousage: 2 capsule
+Instruction: Inject Medicine, then add in the soution
 
-Medicine ID: 24436
-Medicine Name: Paracetamol
-Dousage: 2 
-Instruction: Inject Medicine, then add in the solution
+Medicine ID: M5678
+Medicine Name: Amoxicillin
+Dosage: 1 capsule
+Instruction: Take orally with or without food every 8 hours as prescribed by the doctor
 
+Medicine ID: M7890
+Medicine Name: Omeprazole
+Dosage: 1 tablet
+Instruction: Take orally in the morning before breakfast with a glass of water
 
+Medicine ID: M1234
+Medicine Name: Hydrochlorothiazide
+Dosage: 1 tablet
+Instruction: Take orally with or without food once daily in the morning
 
+Medicine ID: M4567
+Medicine Name: Albuterol
+Dosage: 2 puffs
+Instruction: Inhale orally as needed for relief of asthma symptoms, use with a spacer if available
