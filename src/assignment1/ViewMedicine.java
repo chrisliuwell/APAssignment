@@ -178,11 +178,11 @@ public class ViewMedicine extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String medicineID = jTextField2.getText();
-        boolean medicineExists = checkMedicineExists(medicineID);
+        boolean medicineExists = checkPatientExists(medicineID);
 
         if (medicineExists) {
             System.out.println("Medicine record found");
-            String medicineDetails = getMedicineDetails(medicineID);
+            String medicineDetails = getPatientDetails(medicineID);
             jTextArea1.setText(medicineDetails);
         } else {
             System.out.println("Medicine ID not found!");
@@ -190,7 +190,7 @@ public class ViewMedicine extends javax.swing.JFrame {
         }
     }
 
-    private boolean checkMedicineExists(String medicineID) {
+    private boolean checkPatientExists(String medicineID) {
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -204,7 +204,7 @@ public class ViewMedicine extends javax.swing.JFrame {
         return false; 
     }
 
-    private String getMedicineDetails(String medicineID) {
+    private String getPatientDetails(String medicineID) {
     StringBuilder details = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LORELYN\\OneDrive\\Desktop\\APAssignment\\src\\Text\\Medicine.txt"))) {
             String line;
