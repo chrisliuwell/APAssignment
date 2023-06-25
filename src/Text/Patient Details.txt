@@ -8,3 +8,47 @@ Contact Number: 012-5788892
 Email: binghok@gmail.com
 Address: 57 Dtr Keledang Tmn Perindustrian Chandan Raya 31450 Menglembu Menglembu Perak 31450 Malaysia Mengle 
 
+Patient ID: 01232
+Patient Name: Emily Chen
+Gender: Female
+Date of Birth: 12/09/1985
+Age: 38
+National ID: 940912-05-4567
+Contact Number: 016-7891234
+Email: meilinglee@gmail.com
+Address: 123 Jalan Meranti, Taman Seri Delima, 68000 Ampang, Selangor, Malaysia
+
+Patient ID:  02345
+Patient Name: Michael Johnson
+Gender: Male
+Date of Birth: 18/07/1990
+Age: 33
+National ID: 900718-08-1234
+Contact Number: 019-4567890
+Email: ahmad.hassan@gmail.com
+Address: 456 Jalan Bunga Raya, Taman Seri Murni, 50000 Kuala Lumpur, Malaysia
+
+Patient ID: 03781
+Patient Name: Jennifer Lee
+Gender: Female
+Date of Birth: 05/03/1976
+Age: 47
+National ID: 760305-12-5678
+Contact Number: 017-9876543
+Email: siewling.lim@yahoo.com
+Address: 789 Jalan Sri Manja, Taman Sri Manja, 41200 Klang, Selangor, Malaysia
+
+Patient ID: 05903
+Patient Name: Benjamin Tan
+Gender: Male
+Date of Birth: 28/11/1982
+Age: 41
+National ID: 821128-07-9012
+Contact Number: 013-3456789
+Email: chunmeng.wong@gmail.com
+Address: 234 Jalan Melati, Taman Desa Indah, 81100 Johor Bahru, Johor, Malaysia
+
+
+
+
+

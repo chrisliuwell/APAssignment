@@ -1,4 +1,4 @@
-Procedure ID: 0488
+Procedure ID: P0488
 Procedure Name: Breast biopsy
 Procedure Type: Fine-needle aspiration biopsy
 Date: 03/05/2023
@@ -9,6 +9,48 @@ Duration: 2 hours
 Cost: RM15000
 Description: Surgery included
 
+Procedure ID: P0623
+Procedure Name: Colonoscopy
+Procedure Type: Diagnostic procedure
+Date: 15/06/2023
+Time: 10:30
+Amount: 1
+Frequency: 1
+Duration: 1 hour
+Cost: RM5000
+Description: Screening for colorectal cancer
 
+Procedure ID: P0876
+Procedure Name: Dental Extraction
+Procedure Type: Oral surgery
+Date: 29/07/2023
+Time: 14:00
+Amount: 1
+Frequency: 1
+Duration: 45 minutes
+Cost: RM2000
+Description: Removal of a decayed tooth
+
+Procedure ID: P0956
+Procedure Name: Laparoscopic Cholecystectomy
+Procedure Type: Surgical procedure
+Date: 12/09/2023
+Time: 08:00
+Amount: 1
+Frequency: 1
+Duration: 3 hours
+Cost: RM25000
+Description: Removal of the gallbladder using minimally invasive techniques
+
+Procedure ID: P0132
+Procedure Name: Cardiac Catheterization
+Procedure Type: Interventional procedure
+Date: 05/11/2023
+Time: 11:30
+Amount: 1
+Frequency: 1
+Duration: 2 hours
+Cost: RM35000
+Description: Examination of the heart's blood vessels using a catheter
 
 
