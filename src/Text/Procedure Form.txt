@@ -53,4 +53,3 @@ Duration: 2 hours
 Cost: RM35000
 Description: Examination of the heart's blood vessels using a catheter
 
-

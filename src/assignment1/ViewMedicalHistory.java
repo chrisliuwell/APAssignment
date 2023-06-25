@@ -65,6 +65,11 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         jLabel2.setText("Enter patient ID:");
 
         Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
 
         ReturntoMainMenu.setText("Return to Main Menu");
         ReturntoMainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -171,8 +176,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        
-        String patientID = jTextField2.getText();
+    String patientID = jTextField2.getText();
     boolean patientExist = checkPatientExists(patientID);
 
     if (patientExist) {

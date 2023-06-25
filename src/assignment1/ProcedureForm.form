@@ -81,7 +81,6 @@
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="TreatmentID" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="DateStart" min="-2" pref="99" max="-2" attributes="0"/>
                       <Component id="DateStart1" min="-2" max="-2" attributes="0"/>
                       <Component id="DateStart2" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="DateStart3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -90,6 +89,7 @@
                       <Component id="DateStart6" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                       <Component id="DateStart7" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                       <Component id="DateStart8" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="DateStart" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -111,7 +111,7 @@
                           <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="84" max="32767" attributes="0"/>
+                  <EmptySpace pref="82" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -407,19 +407,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="176" max="32767" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="146" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="61" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

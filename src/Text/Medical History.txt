@@ -57,3 +57,16 @@ Doctor Name: Chong Mei Ling
 Nurse Name: Tan Wei Heng
 Ward No.: E212
 Additional Notes: Patient discharged with post-treatment instructions and follow-up scheduled in one month.
+
+Patient ID: 03782
+Patient Name: Jennifer Tan 
+Treatment Date: 10/09/2022
+Treatment Time: 12:00 AM
+Treatment Result: Successful Treatment
+Observation: Gradual Improvement in Mobilitiy
+Major complications: None
+Doctor name: Lim Wei Jie
+Nurse name: Ng Kim Li
+Ward No.: D421
+Additional Notes: Patient to get medical check-up monthly
+

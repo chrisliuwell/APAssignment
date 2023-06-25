@@ -40,5 +40,3 @@ Date End: 14/12/2023
 Duration: 7 days
 Status: Active
 
-
-

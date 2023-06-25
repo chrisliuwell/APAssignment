@@ -22,3 +22,14 @@ Medicine ID: M4567
 Medicine Name: Albuterol
 Dosage: 2 puffs
 Instruction: Inhale orally as needed for relief of asthma symptoms, use with a spacer if available
+
+Medicine ID: M4568
+Medicine Name: Paracetamol 
+Dousage: 1 Tablet
+Instruction: Take orally 3 times a day after meal
+
+Medicine ID: M4569
+Medicine Name: Ibuprofen
+Dousage: 1 capsule
+Instruction: Take orally after meal 3 times a day
+
