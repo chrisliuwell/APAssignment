@@ -181,13 +181,13 @@ public class ViewTreatment extends javax.swing.JFrame {
     boolean patientExist = checkPatientExists(treatmentID);
 
     if (patientExist) {
-        System.out.println("Medical Procedure found");
+        System.out.println("Medical Treatment found");
         String patientDetails = getPatientDetails(treatmentID);
-        jTextArea1.setText("Medical Procedure Record:\n" + patientDetails);
+        jTextArea1.setText(patientDetails);
         
     } else {
-        System.out.println("Patient Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
+        System.out.println("Patient Treatment ID not found!");
+        jTextArea1.setText("No details found for the given treatment ID.");
     }
     }
 

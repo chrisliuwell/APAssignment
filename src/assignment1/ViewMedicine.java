@@ -177,16 +177,16 @@ public class ViewMedicine extends javax.swing.JFrame {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
         
-        String medicineID = jTextField2.getText();
-    boolean procedureExists = checkProcedureExists(medicineID);
+    String medicineID = jTextField2.getText();
+    boolean medicineExists = checkProcedureExists(medicineID);
 
-    if (procedureExists) {
+    if (medicineExists) {
         System.out.println("Medical Procedure found");
-        String procedureDetails = getProcedureDetails(medicineID);
-        jTextArea1.setText("Medical Procedure Record:\n" + procedureDetails);
+        String medicineDetails = getProcedureDetails(medicineID);
+        jTextArea1.setText(medicineDetails);
     } else {
-        System.out.println("Procedure ID not found!");
-        jTextArea1.setText("No details found for the given procedure ID.");
+        System.out.println("Medicine ID not found!");
+        jTextArea1.setText("No details found for the given medicine ID.");
     }
     }
 

@@ -177,16 +177,16 @@ public class ViewAnalysis extends javax.swing.JFrame {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
         
-        String analysisID = jTextField2.getText();
+    String analysisID = jTextField2.getText();
     boolean patientExist = checkPatientExists(analysisID);
 
     if (patientExist) {
-        System.out.println("Medical History found");
+        System.out.println("Print Analysis Record");
         String patientDetails = getPatientDetails(analysisID);
-        jTextArea1.setText("Medical History Record:\n" + patientDetails);
+        jTextArea1.setText(patientDetails);
         
     } else {
-        System.out.println("Patient ID not found!");
+        System.out.println("Patient Analysis ID not found!");
         jTextArea1.setText("No details found for the given patient ID.");
     }
     }
@@ -196,14 +196,14 @@ public class ViewAnalysis extends javax.swing.JFrame {
         String line;
         boolean foundPatient = false;
         while ((line = br.readLine()) != null) {
-            if (line.equals("Patient ID: " + analysisID)) {
-                return true; // Patient ID exists in the text file
+            if (line.equals("Analysis ID: " + analysisID)) {
+                return true; // Analysis ID exists in the text file
             }
         }
     } catch (IOException e) {
         e.printStackTrace();
     }
-    return false; // Patient ID not found in the text file
+    return false; // Analysis ID not found in the text file
     }
 
     private String getPatientDetails(String analysisID) {
