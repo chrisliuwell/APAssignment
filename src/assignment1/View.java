@@ -408,31 +408,31 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_PatientMouseClicked
 
     private void ProcedureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProcedureMouseClicked
-        ViewForm vf = new ViewForm();
-        vf.setVisible(true);
-        vf.pack();
-        vf.setLocationRelativeTo(null);
-        vf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ViewProcedure va = new ViewProcedure();
+        va.setVisible(true);
+        va.pack();
+        va.setLocationRelativeTo(null);
+        va.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_ProcedureMouseClicked
 
     
     
     private void TreatmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreatmentMouseClicked
-        ViewForm vf = new ViewForm();
-        vf.setVisible(true);
-        vf.pack();
-        vf.setLocationRelativeTo(null);
-        vf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ViewTreatment vt = new ViewTreatment();
+        vt.setVisible(true);
+        vt.pack();
+        vt.setLocationRelativeTo(null);
+        vt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_TreatmentMouseClicked
 
     private void MedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicineMouseClicked
-        ViewForm vf = new ViewForm();
-        vf.setVisible(true);
-        vf.pack();
-        vf.setLocationRelativeTo(null);
-        vf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ViewMedicine vm = new ViewMedicine();
+        vm.setVisible(true);
+        vm.pack();
+        vm.setLocationRelativeTo(null);
+        vm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_MedicineMouseClicked
 
@@ -446,21 +446,21 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnMainMenuMouseClicked
 
     private void MedicalHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicalHistoryMouseClicked
-        ViewForm vf = new ViewForm();
-        vf.setVisible(true);
-        vf.pack();
-        vf.setLocationRelativeTo(null);
-        vf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ViewMedicalHistory vh = new ViewMedicalHistory();
+        vh.setVisible(true);
+        vh.pack();
+        vh.setLocationRelativeTo(null);
+        vh.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_MedicalHistoryMouseClicked
 
     
     private void AnalysisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalysisMouseClicked
-        ViewForm vf = new ViewForm();
-        vf.setVisible(true);
-        vf.pack();
-        vf.setLocationRelativeTo(null);
-        vf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ViewAnalysis vp = new ViewAnalysis();
+        vp.setVisible(true);
+        vp.pack();
+        vp.setLocationRelativeTo(null);
+        vp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_AnalysisMouseClicked
 

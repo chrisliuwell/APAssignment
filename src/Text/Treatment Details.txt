@@ -1,1 +1,14 @@
+Treatment ID: 03992
+Date Start: 20/05/2023
+Date End: 31/05/2023
+Duration: 11 days
+Status: Active
+
+Treatment ID: 03996
+Date Start: 20/05/2023
+Date End: 30/05/2023
+Duration: 10 days
+Status: Non-Active
+
+
 

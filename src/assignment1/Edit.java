@@ -397,11 +397,11 @@ public class Edit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PatientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PatientMouseClicked
-        EditForm e = new EditForm();
-        e.setVisible(true);
-        e.pack();
-        e.setLocationRelativeTo(null);
-        e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        EditForm ep = new EditForm();
+        ep.setVisible(true);
+        ep.pack();
+        ep.setLocationRelativeTo(null);
+        ep.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_PatientMouseClicked
 
@@ -415,20 +415,20 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_ProcedureMouseClicked
 
     private void TreatmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreatmentMouseClicked
-        EditTreatmentDetails e = new EditTreatmentDetails();
-        e.setVisible(true);
-        e.pack();
-        e.setLocationRelativeTo(null);
-        e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        EditTreatmentDetails et = new EditTreatmentDetails();
+        et.setVisible(true);
+        et.pack();
+        et.setLocationRelativeTo(null);
+        et.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_TreatmentMouseClicked
 
     private void MedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicineMouseClicked
-        EditMedicine e = new EditMedicine();
-        e.setVisible(true);
-        e.pack();
-        e.setLocationRelativeTo(null);
-        e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        EditMedicine em = new EditMedicine();
+        em.setVisible(true);
+        em.pack();
+        em.setLocationRelativeTo(null);
+        em.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_MedicineMouseClicked
 
@@ -442,20 +442,20 @@ public class Edit extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnMainMenuMouseClicked
 
     private void MedicalHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicalHistoryMouseClicked
-        EditMedicalHistory e = new EditMedicalHistory();
-        e.setVisible(true);
-        e.pack();
-        e.setLocationRelativeTo(null);
-        e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        EditMedicalHistory eh = new EditMedicalHistory();
+        eh.setVisible(true);
+        eh.pack();
+        eh.setLocationRelativeTo(null);
+        eh.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_MedicalHistoryMouseClicked
 
     private void AnalysisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalysisMouseClicked
-        EditAnalysis e = new EditAnalysis();
-        e.setVisible(true);
-        e.pack();
-        e.setLocationRelativeTo(null);
-        e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        EditAnalysis ea = new EditAnalysis();
+        ea.setVisible(true);
+        ea.pack();
+        ea.setLocationRelativeTo(null);
+        ea.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_AnalysisMouseClicked
 

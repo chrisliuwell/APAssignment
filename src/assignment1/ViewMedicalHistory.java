@@ -65,11 +65,6 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         jLabel2.setText("Enter patient ID:");
 
         Submit.setText("Submit");
-        Submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubmitActionPerformed(evt);
-            }
-        });
 
         ReturntoMainMenu.setText("Return to Main Menu");
         ReturntoMainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +119,7 @@ public class ViewMedicalHistory extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(83, 83, 83)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
